@@ -34,3 +34,9 @@ Check out the live version of my portfolio: [Manas Dubey Portfolio](https://viki
 - **Tailwind CSS**: Utility-first CSS framework  
 - **React.js**: Frontend framework  
 - **Node.js**: Backend support  
+
+🔗 Connect with Me
+🌐 LinkedIn
+🐙 GitHub
+📸 Instagram
+📧 Email
