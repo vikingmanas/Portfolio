@@ -6,7 +6,7 @@
 
 ## 💻 **Live Preview**
 
-Check out the live version of my portfolio: [Manas Dubey Portfolio](https://your-live-site-link.com)
+Check out the live version of my portfolio: [Manas Dubey Portfolio](https://vikingmanas.github.io/Portfolio/)
 
 ---
 
