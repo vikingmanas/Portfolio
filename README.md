@@ -25,3 +25,12 @@ Check out the live version of my portfolio: [Manas Dubey Portfolio](https://viki
 1. Clone the repository:
    ```bash
    git clone https://github.com/vikingmanas/portfolio-website.git
+## 🚀 **Technologies Used**
+
+- **HTML5**: Structuring the webpage  
+- **CSS3**: Styling and layout  
+- **JavaScript**: Adding interactivity  
+- **Bootstrap**: Responsive design framework  
+- **Tailwind CSS**: Utility-first CSS framework  
+- **React.js**: Frontend framework  
+- **Node.js**: Backend support  
