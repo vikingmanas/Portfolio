@@ -1,2 +1,27 @@
-# Portfolio
-Welcome to my portfolio! I’m a passionate coder and an eager learner, dedicated to showcasing my skills and innovative projects. I'm excited to explore new opportunities for collaboration and to create impactful solutions together.
+# 🌐 Manas Dubey's Portfolio Website
+
+🚀 Welcome to the repository of my personal portfolio website! This project represents my journey, skills, projects, and achievements as a developer.
+
+---
+
+## 💻 **Live Preview**
+
+Check out the live version of my portfolio: [Manas Dubey Portfolio](https://your-live-site-link.com)
+
+---
+
+## 🔍 **Features**
+
+- 🎨 **Modern Design:** Sleek, professional layout using HTML, CSS, and Bootstrap.
+- 📱 **Responsive Layout:** Optimized for desktops, tablets, and mobile devices.
+- ✨ **Animations:** Engaging, interactive animations using CSS and JavaScript.
+- 📁 **Portfolio Showcase:** Highlights projects like **LAW BOT**, **HEAL**, and more.
+- 🌟 **Technologies Used:** Cutting-edge tools like React and Tailwind CSS.
+
+---
+
+## 🛠️ **Installation**
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/vikingmanas/portfolio-website.git
