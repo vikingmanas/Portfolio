@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Manas Dubey | Portfolio</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
 
-  <!-- Tailwind CSS -->
+  <!-- Tailwind CDN + config (kept in HTML as requested) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            inter: ['Inter', 'sans-serif'],
-          },
+          fontFamily: { inter: ['Inter', 'sans-serif'] },
           colors: {
             'custom-bg-dark': '#0a0a0a',
             'custom-card-dark': '#1c1c1c',
@@ -33,8 +31,8 @@
     }
   </script>
 </head>
-<body class="bg-custom-bg-dark text-custom-text-light min-h-screen">
 
+<body class="bg-custom-bg-dark text-custom-text-light min-h-screen font-inter">
   <!-- Navigation Bar -->
   <header class="p-6 md:p-8 flex items-center justify-between sticky top-0 bg-custom-bg-dark z-50">
     <a href="#hero" class="bg-white/10 text-custom-text-light rounded-full p-2 px-4 shadow-lg hover:bg-white/20 transition-colors duration-300">
@@ -42,12 +40,14 @@
     </a>
     <nav>
       <ul class="flex items-center space-x-4 md:space-x-6">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#tech" class="nav-link">Tech</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#about" class="text-sm md:text-base font-medium hover:text-custom-accent transition-colors duration-200">About</a></li>
+        <li><a href="#tech" class="text-sm md:text-base font-medium hover:text-custom-accent transition-colors duration-200">Tech</a></li>
+        <li><a href="#experience" class="text-sm md:text-base font-medium hover:text-custom-accent transition-colors duration-200">Experience</a></li>
+        <li><a href="#projects" class="text-sm md:text-base font-medium hover:text-custom-accent transition-colors duration-200">Projects</a></li>
         <li>
-          <button id="contact-button" class="btn-primary">Contact</button>
+          <button id="contact-button" class="bg-custom-accent text-white px-4 py-2 rounded-lg font-semibold shadow-lg hover:bg-blue-500 transition-colors duration-300">
+            Contact
+          </button>
         </li>
       </ul>
     </nav>
@@ -55,105 +55,173 @@
 
   <main class="container mx-auto px-4 py-8">
     <!-- Hero Section -->
-    <section id="hero" class="hero-section">
+    <section id="hero" class="flex flex-col-reverse md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12 min-h-[calc(100vh-100px)] p-6 animate-fadeInUp">
       <div class="flex-1 text-center md:text-left">
         <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
           Manas Dubey
         </h1>
         <p class="text-xl md:text-2xl text-gray-400 font-medium max-w-lg mx-auto md:mx-0">
-          Crafting ideas into reality through expert full-stack development.
+          Crafting ideas into reality through expert development.
         </p>
-        <!-- Social Links -->
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/manas-dubey-415385296" target="_blank">
-            <img src="https://placehold.co/40x40/0077b5/ffffff?text=In" alt="LinkedIn Logo" class="social-icon">
+        <!-- Social Links (using your provided links & assets) -->
+        <div class="flex items-center justify-center md:justify-start space-x-6 mt-6">
+          <a href="https://www.linkedin.com/in/manas-dubey-415385296?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">
+            <img src="image/LinkedIn.png" alt="LinkedIn" class="w-10 h-10 rounded-full hover:scale-110 transition-transform duration-300"/>
           </a>
-          <a href="https://github.com/vikingmanas" target="_blank">
-            <img src="https://placehold.co/40x40/333333/ffffff?text=Git" alt="GitHub Logo" class="social-icon">
+          <a href="https://github.com/vikingmanas" target="_blank" rel="noopener noreferrer">
+            <img src="image/GitHub.png" alt="GitHub" class="w-10 h-10 rounded-full hover:scale-110 transition-transform duration-300"/>
           </a>
-          <a href="https://www.instagram.com/beingmanas009" target="_blank">
-            <img src="https://placehold.co/40x40/E4405F/ffffff?text=Insta" alt="Instagram Logo" class="social-icon">
+          <a href="https://www.instagram.com/beingmanas009?igsh=MWY4aWJwNDZvMGNhcA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
+            <img src="image/Instagram.png" alt="Instagram" class="w-10 h-10 rounded-full hover:scale-110 transition-transform duration-300"/>
           </a>
         </div>
       </div>
       <div class="flex-1 flex justify-center">
-        <img src="https://placehold.co/300x300/e0e0e0/1a1a1a?text=Manas" alt="Portrait of Manas" class="profile-pic">
+        <img src="image/ME.jpg" alt="Portrait of Manas" class="w-48 h-48 md:w-64 md:h-64 rounded-full shadow-lg border-4 border-custom-accent/50 animate-pulse object-cover"/>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section-card">
-      <h2 class="section-title">About Me</h2>
+    <section id="about" class="my-16 p-6 md:p-10 bg-custom-card-dark rounded-xl shadow-lg animate-fadeInUp">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-8">About Me</h2>
       <div class="flex flex-col md:flex-row items-center md:space-x-10">
         <div class="flex-shrink-0 w-full md:w-1/3 mb-6 md:mb-0">
-          <img src="https://placehold.co/400x400/1a1a1a/e0e0e0?text=About+Me" alt="About Me Image" class="rounded-xl shadow-lg border border-white/10">
+          <img src="image/image2.jpg" alt="About Me Image" class="rounded-xl shadow-lg border border-white/10 object-cover w-full"/>
         </div>
         <div class="flex-1">
-          <p class="about-text">
-            I’m a passionate full-stack developer who loves bringing web applications to life...
+          <p class="text-base md:text-lg text-gray-300 leading-relaxed text-justify">
+            I’m a passionate full stack developer who loves bringing web applications to life with a smooth, user-friendly touch. My go-to tools are React, Next.js, Node.js, and PostgreSQL, but I’m always excited to explore new technologies. My journey into web development began with a fascination for how things work and has evolved into a career where I’m always learning and tackling new challenges. I thrive in collaborative environments and enjoy solving tricky problems to deliver high-quality results. Outside of coding, I stay active, explore the latest tech trends, and contribute to open-source projects whenever I can.
           </p>
         </div>
       </div>
     </section>
 
     <!-- Technologies Section -->
-    <section id="tech" class="section-card">
-      <h2 class="section-title">Technologies</h2>
-      <div class="tech-grid">
-        <img src="https://placehold.co/80x80/20344d/f06529?text=HTML" alt="HTML Logo" class="tech-icon">
-        <img src="https://placehold.co/80x80/0d5b7a/2965f1?text=CSS" alt="CSS Logo" class="tech-icon">
-        <img src="https://placehold.co/80x80/d3d839/000000?text=JS" alt="JavaScript Logo" class="tech-icon">
-        <img src="https://placehold.co/80x80/553c7b/7952b3?text=Bts" alt="Bootstrap Logo" class="tech-icon">
-        <img src="https://placehold.co/80x80/295350/06b6d4?text=Tailwind" alt="Tailwind CSS" class="tech-icon">
-        <img src="https://placehold.co/80x80/0a4947/06b6d4?text=React" alt="React" class="tech-icon">
-        <img src="https://placehold.co/80x80/003d50/336791?text=SQL" alt="SQL" class="tech-icon">
+    <section id="tech" class="my-16 p-6 md:p-10 bg-custom-card-dark rounded-xl shadow-lg animate-fadeInUp">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-8">Technologies</h2>
+      <div class="flex flex-wrap items-center justify-center gap-6 md:gap-8">
+        <img src="image/Htmllogo.png" alt="HTML" class="w-16 h-16 md:w-20 md:h-20 hover:scale-110 transition-transform duration-300 rounded-lg shadow-md object-contain"/>
+        <img src="image/Css.png" alt="CSS" class="w-16 h-16 md:w-20 md:h-20 hover:scale-110 transition-transform duration-300 rounded-lg shadow-md object-contain"/>
+        <img src="image/js.png" alt="JavaScript" class="w-16 h-16 md:w-20 md:h-20 hover:scale-110 transition-transform duration-300 rounded-lg shadow-md object-contain"/>
+        <img src="image/bootstrap.png" alt="Bootstrap" class="w-16 h-16 md:w-20 md:h-20 hover:scale-110 transition-transform duration-300 rounded-lg shadow-md object-contain"/>
+        <img src="image/Tailwind.png" alt="Tailwind CSS" class="w-16 h-16 md:w-20 md:h-20 hover:scale-110 transition-transform duration-300 rounded-lg shadow-md object-contain"/>
+        <img src="image/react.png" alt="React" class="w-16 h-16 md:w-20 md:h-20 hover:scale-110 transition-transform duration-300 rounded-lg shadow-md object-contain"/>
+        <img src="image/SQL-2.png" alt="SQL" class="w-16 h-16 md:w-20 md:h-20 hover:scale-110 transition-transform duration-300 rounded-lg shadow-md object-contain"/>
       </div>
     </section>
-
+    
     <!-- Experience Section -->
-    <section id="experience" class="section-card">
-      <h2 class="section-title">Experiences & Learnings</h2>
+    <section id="experience" class="my-16 p-6 md:p-10 bg-custom-card-dark rounded-xl shadow-lg animate-fadeInUp">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-8">Experiences &amp; Learnings</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Cards (Walmart, JP Morgan, SIH, Internship) -->
-        <!-- Keep your same content here -->
+        <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <img src="image/Walmart.png" alt="Walmart Tech" class="w-full h-36 object-cover"/>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2 text-white">Walmart Tech</h3>
+            <p class="text-gray-400 text-sm">Experience real-world challenges with Walmart Tech and enhance your skills in an exciting, hands-on environment!</p>
+          </div>
+        </div>
+        <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <img src="image/JP morgan.png" alt="JP Morgan" class="w-full h-36 object-cover"/>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2 text-white">JP Morgan</h3>
+            <p class="text-gray-400 text-sm">I learned what investment banking is and how it works.</p>
+          </div>
+        </div>
+        <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <img src="image/SIH.jpg" alt="Smart India Hackathon" class="w-full h-36 object-cover"/>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2 text-white">Smart India Hackathon</h3>
+            <p class="text-gray-400 text-sm">The Pre-Qualifiers for the Smart India Hackathon are among the top 100 teams out of 400 that reached the last round.</p>
+          </div>
+        </div>
+        <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <img src="image/internship.jpg" alt="AI/ML Internship" class="w-full h-36 object-cover"/>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2 text-white">Internship</h3>
+            <p class="text-gray-400 text-sm">An internship offered by Google in AI and ML, approved by AICTE.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section-card">
-      <h2 class="section-title">Projects</h2>
+    <section id="projects" class="my-16 p-6 md:p-10 bg-custom-card-dark rounded-xl shadow-lg animate-fadeInUp">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-8">Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Project Cards (Portfolio, MedGen, Coming Soon...) -->
-        <!-- Keep your same content here -->
+        <!-- Project 1 -->
+        <div class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+          <img src="image/PORT.png" alt="Portfolio Website" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"/>
+          <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="text-center p-4">
+              <h3 class="text-xl font-semibold mb-2 text-white">Portfolio Website</h3>
+              <p class="text-gray-300 text-sm mb-4">Created My Portfolio Website</p>
+              <a href="https://github.com/vikingmanas" target="_blank" rel="noopener noreferrer" class="bg-custom-accent text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-500 transition-colors duration-300">View Code</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+          <img src="image/MED.png" alt="MedGen" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"/>
+          <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="text-center p-4">
+              <h3 class="text-xl font-semibold mb-2 text-white">MedGen</h3>
+              <p class="text-gray-300 text-sm mb-4">MedGen: AI chatbot for instant medical insights, symptom analysis, and wellness guidance.</p>
+              <a href="https://github.com/vikingmanas" target="_blank" rel="noopener noreferrer" class="bg-custom-accent text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-500 transition-colors duration-300">View Code</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+          <img src="image/GitHub.png" alt="Video Streaming Platform" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"/>
+          <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="text-center p-4">
+              <h3 class="text-xl font-semibold mb-2 text-white">Video Streaming Platform</h3>
+              <p class="text-gray-300 text-sm mb-4">Video Streaming platform coming soon</p>
+              <span class="bg-gray-500 text-white px-4 py-2 rounded-full text-sm font-medium cursor-not-allowed">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+        <!-- Project 4 -->
+        <div class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+          <img src="image/GitHub.png" alt="Project 4" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"/>
+          <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="text-center p-4">
+              <h3 class="text-xl font-semibold mb-2 text-white">Project 4</h3>
+              <p class="text-gray-300 text-sm mb-4">Soon</p>
+              <span class="bg-gray-500 text-white px-4 py-2 rounded-full text-sm font-medium cursor-not-allowed">Coming Soon</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <!-- Contact Modal -->
-  <div id="contact-modal" class="modal hidden">
-    <div class="modal-content">
+  <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[100] hidden">
+    <div class="bg-custom-card-dark p-8 rounded-xl shadow-2xl max-w-lg w-full m-4 border border-white/10">
       <div class="flex justify-between items-center mb-6">
         <h3 class="text-2xl font-bold text-white">Contact Me</h3>
         <button id="close-modal-button" class="text-gray-400 hover:text-white transition-colors duration-200 text-3xl leading-none">&times;</button>
       </div>
       <div class="space-y-4">
         <div>
-          <h4 class="contact-title">Mobile Number</h4>
-          <p><a href="tel:+919821910281" class="contact-link">+91 9821910281</a></p>
+          <h4 class="text-lg font-semibold text-custom-accent">Mobile Number</h4>
+          <p class="text-gray-300 text-base"><a href="tel:+919821910281" class="hover:underline transition-colors duration-200">+91 9821910281</a></p>
         </div>
         <div>
-          <h4 class="contact-title">Email</h4>
-          <p><a href="mailto:manasdubey2709@gmail.com" class="contact-link">manasdubey2709@gmail.com</a></p>
+          <h4 class="text-lg font-semibold text-custom-accent">Email</h4>
+          <p class="text-gray-300 text-base"><a href="mailto:manasdubey2709@gmail.com" class="hover:underline transition-colors duration-200">manasdubey2709@gmail.com</a></p>
         </div>
         <div>
-          <h4 class="contact-title">Location</h4>
-          <p class="text-gray-300">Sector-16B, Greater Noida West</p>
+          <h4 class="text-lg font-semibold text-custom-accent">Location</h4>
+          <p class="text-gray-300 text-base">Sector-16B, Greater Noida West</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- External JS -->
+  <!-- External JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
