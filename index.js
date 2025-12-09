@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
   const navToggle = document.getElementById('nav-toggle');
   const mobileNav = document.getElementById('mobile-nav');
   const hamburger = document.getElementById('hamburger');
@@ -64,7 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function escKeyClose(e) {
-    if (e.key === 'Escape') closeModal();
+    if (e.key === 'Escape') {
+      if (!document.getElementById('resume-modal').classList.contains('hidden')) closeResumeModal();
+      else closeModal();
+    }
   }
 
   function trapTabKey(e) {
@@ -135,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', () => {
-      if (!mobileNav.classList.contains('hidden')) {
+      if (mobileNav && !mobileNav.classList.contains('hidden')) {
         mobileNav.classList.add('hidden');
         navToggle.setAttribute('aria-expanded', 'false');
         hamburger.classList.remove('hidden');
@@ -143,4 +145,37 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  const resumeButton = document.getElementById('resume-button');
+  const resumeModal = document.getElementById('resume-modal');
+  const closeResume = document.getElementById('close-resume');
+  const resumeFrame = document.getElementById('resume-frame');
+
+  function openResumeModal() {
+    resumeModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+      resumeFrame.focus();
+    }, 60);
+  }
+
+  function closeResumeModal() {
+    resumeModal.classList.add('hidden');
+    document.body.style.overflow = '';
+    const resumeOpenNew = document.getElementById('resume-open-new');
+    resumeOpenNew?.focus();
+  }
+
+  resumeButton.addEventListener('click', () => {
+    openResumeModal();
+  });
+
+  closeResume.addEventListener('click', () => {
+    closeResumeModal();
+  });
+
+  resumeModal.addEventListener('click', (e) => {
+    if (e.target === resumeModal) closeResumeModal();
+  });
+
 });

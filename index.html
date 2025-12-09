@@ -5,11 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manas Dubey | Portfolio</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -20,13 +18,12 @@
             'custom-bg-dark': '#0a0a0a',
             'custom-card-dark': '#1c1c1c',
             'custom-text-light': '#e0e0e0',
-            'custom-accent': '#60a5fa',
-          },
+            'custom-accent': '#60a5fa'
+          }
         }
       }
     }
   </script>
-
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -35,7 +32,8 @@
   <header
     class="p-4 md:p-6 flex items-center justify-between sticky top-0 bg-custom-bg-dark z-50 border-b border-white/5">
     <a href="#hero"
-      class="bg-white/10 text-custom-text-light rounded-full p-2 px-4 shadow-sm hover:bg-white/20 transition-colors duration-300">
+      class="bg-white/10 text-custom-text-light rounded-full p-2 px-4 shadow-sm hover:bg-white/20 transition-colors duration-300"
+      aria-label="Home">
       <h1 class="text-lg md:text-xl font-bold">MD</h1>
     </a>
 
@@ -52,7 +50,7 @@
       <button id="contact-button-mobile"
         class="bg-custom-accent text-black px-3 py-2 rounded-lg font-semibold shadow hover:bg-blue-500">Contact</button>
       <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav"
-        class="p-2 rounded-md bg-white/10 hover:bg-white/20">
+        class="p-2 rounded-md bg-white/10 hover:bg-white/20" aria-label="Toggle navigation">
         <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"
           stroke="currentColor" class="text-custom-text-light">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
@@ -75,7 +73,6 @@
   </div>
 
   <main class="container mx-auto px-4 py-8">
-
     <section id="hero"
       class="flex flex-col-reverse md:flex-row items-center justify-center gap-8 min-h-[calc(100vh-120px)] p-6 animate-fadeInUp">
       <div class="flex-1 text-center md:text-left">
@@ -85,15 +82,15 @@
         </p>
 
         <div class="flex items-center justify-center md:justify-start space-x-4 mt-6">
-          <a href="https://www.linkedin.com/in/manas-dubey-415385296" target="_blank">
+          <a href="https://www.linkedin.com/in/manas-dubey-415385296" target="_blank" aria-label="LinkedIn profile">
             <img src="image/LinkedIn.png" alt="LinkedIn"
               class="w-10 h-10 rounded-full hover:scale-110 transition-transform" loading="lazy" />
           </a>
-          <a href="https://github.com/vikingmanas" target="_blank">
+          <a href="https://github.com/vikingmanas" target="_blank" aria-label="GitHub profile">
             <img src="image/GitHub.png" alt="GitHub" class="w-10 h-10 rounded-full hover:scale-110 transition-transform"
               loading="lazy" />
           </a>
-          <a href="https://www.instagram.com/beingmanas009" target="_blank">
+          <a href="https://www.instagram.com/beingmanas009" target="_blank" aria-label="Instagram profile">
             <img src="image/Instagram.png" alt="Instagram"
               class="w-10 h-10 rounded-full hover:scale-110 transition-transform" loading="lazy" />
           </a>
@@ -107,10 +104,15 @@
         </div>
       </div>
 
-      <div class="flex-1 flex justify-center">
+      <div class="flex-1 flex flex-col items-center md:items-end gap-4">
         <img src="image/ME.jpg" alt="Portrait of Manas"
           class="w-44 h-44 md:w-72 md:h-72 rounded-full shadow-lg border-4 border-custom-accent/50 object-cover"
           loading="lazy" />
+        <div class="flex gap-3">
+          <button id="resume-button"
+            class="bg-white/8 text-white px-4 py-2 rounded-lg font-semibold hover:bg-white/12">View Resume</button>
+          <a href="Resume.pdf" target="_blank" id="resume-open-new" class="hidden">Open PDF</a>
+        </div>
       </div>
     </section>
 
@@ -123,17 +125,19 @@
         </div>
         <div class="flex-1">
           <p class="text-sm md:text-base text-gray-300 leading-relaxed text-justify">
-            I’m a passionate full stack developer who loves building smooth, user-friendly web applications. My go-to
-            tools are React, Next.js, Node.js, and PostgreSQL. I enjoy solving tricky problems and delivering
-            high-quality results.
+            I build reliable backend systems and responsive web interfaces. I am proficient in Java, Python, and
+            JavaScript, and I work with Node.js, React/Next.js, Express, and databases such as MongoDB and PostgreSQL. I
+            design clean APIs, write maintainable code, and implement testing and basic CI workflows. I prioritize
+            accessibility and performance, and I can take a feature from design to production: architecture,
+            implementation, and deployment.
           </p>
           <ul class="mt-4 grid grid-cols-2 gap-2 text-xs md:text-sm text-gray-300">
             <li><strong>Location:</strong> Greater Noida West</li>
             <li><strong>Education:</strong> B.Tech CSE</li>
-            <li><strong>CGPA:</strong> 7.7</li>
-            <li><strong>LeetCode:</strong> 190+</li>
-            <li><strong>Codeforces:</strong> 1010</li>
             <li><strong>Languages:</strong> Java, Python, SQL</li>
+            <li><strong>Focus:</strong> Backend, Web, APIs</li>
+            <li><strong>Tools:</strong> Git, Docker, IntelliJ, VS Code</li>
+            <li><strong>UX:</strong> Accessibility & responsive design</li>
           </ul>
         </div>
       </div>
@@ -180,7 +184,7 @@
           <img src="image/internship.jpg" alt="AI/ML Internship" class="exp-img" loading="lazy" />
           <div class="p-4">
             <h3 class="exp-title">AI/ML Internship</h3>
-            <p class="exp-text">AI/ML internship by Google & AICTE.</p>
+            <p class="exp-text">AI/ML internship by Google &amp; AICTE.</p>
           </div>
         </div>
       </div>
@@ -189,7 +193,6 @@
     <section id="projects" class="my-12 p-6 md:p-10 bg-custom-card-dark rounded-xl shadow-lg animate-fadeInUp">
       <h2 class="text-2xl md:text-3xl font-bold text-center text-white mb-6">Projects</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
         <article class="project-card">
           <img src="image/PORT.png" class="project-img" loading="lazy" />
           <div class="project-overlay">
@@ -200,18 +203,16 @@
             </div>
           </div>
         </article>
-
         <article class="project-card">
           <img src="image/MED.png" class="project-img" loading="lazy" />
           <div class="project-overlay">
             <div class="text-center p-4">
               <h3 class="project-title">MedGen</h3>
-              <p class="project-desc">AI chatbot built using LangChain & Pinecone.</p>
+              <p class="project-desc">AI chatbot built using LangChain &amp; Pinecone.</p>
               <a href="https://github.com/vikingmanas" target="_blank" class="project-btn">View Code</a>
             </div>
           </div>
         </article>
-
         <article class="project-card">
           <img src="image/GitHub.png" class="project-img" loading="lazy" />
           <div class="project-overlay">
@@ -222,7 +223,6 @@
             </div>
           </div>
         </article>
-
         <article class="project-card">
           <img src="image/GitHub.png" class="project-img" loading="lazy" />
           <div class="project-overlay">
@@ -233,7 +233,6 @@
             </div>
           </div>
         </article>
-
       </div>
     </section>
   </main>
@@ -241,44 +240,57 @@
   <button id="back-to-top"
     class="hidden fixed bottom-6 right-6 z-50 bg-custom-accent text-black p-3 rounded-full shadow-lg">↑</button>
 
-  <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-[100] hidden">
+  <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-[100] hidden"
+    role="dialog" aria-modal="true" aria-labelledby="contact-title">
     <div class="bg-custom-card-dark p-6 rounded-xl shadow-2xl max-w-lg w-full m-4 border border-white/10">
       <div class="flex justify-between items-center mb-4">
         <h3 id="contact-title" class="text-xl font-bold text-white">Contact Me</h3>
-        <button id="close-modal-button" class="text-gray-400 hover:text-white text-2xl leading-none">&times;</button>
+        <button id="close-modal-button" class="text-gray-400 hover:text-white text-2xl leading-none"
+          aria-label="Close contact form">&times;</button>
       </div>
-
       <form id="contact-form" class="space-y-4" novalidate>
         <label class="block">
           <span class="text-gray-300 text-sm">Name</span>
           <input type="text" id="contact-name"
             class="mt-1 w-full rounded bg-black/30 border border-white/5 p-2 text-white" required />
         </label>
-
         <label class="block">
           <span class="text-gray-300 text-sm">Email</span>
           <input type="email" id="contact-email"
             class="mt-1 w-full rounded bg-black/30 border border-white/5 p-2 text-white" required />
         </label>
-
         <label class="block">
           <span class="text-gray-300 text-sm">Message</span>
           <textarea id="contact-message" rows="4"
             class="mt-1 w-full rounded bg-black/30 border border-white/5 p-2 text-white" required></textarea>
         </label>
-
         <div class="flex items-center gap-3">
           <button type="submit" class="bg-custom-accent text-black px-4 py-2 rounded-lg font-semibold">Send</button>
           <button id="copy-email" type="button" class="bg-white/8 text-white px-3 py-2 rounded-lg">Copy email</button>
           <a href="mailto:manasdubey2709@gmail.com" id="mailto-link" class="sr-only">Email link</a>
         </div>
-
-        <p id="contact-status" class="text-sm text-gray-400 hidden"></p>
+        <p id="contact-status" class="text-sm text-gray-400 hidden" role="status"></p>
       </form>
     </div>
   </div>
 
-  <script src="script.js" defer></script>
+  <div id="resume-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[110] hidden"
+    role="dialog" aria-modal="true" aria-labelledby="resume-title">
+    <div
+      class="bg-black w-[92vw] md:w-[80vw] lg:w-[70vw] h-[80vh] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+      <div class="flex items-center justify-between p-3 bg-custom-card-dark border-b border-white/5">
+        <h3 id="resume-title" class="text-lg font-semibold text-white">Resume</h3>
+        <div class="flex items-center gap-2">
+          <a id="resume-download" href="Resume.pdf" download
+            class="bg-white/8 text-white px-3 py-1 rounded-md">Download</a>
+          <button id="close-resume" class="text-gray-300 text-2xl px-3 py-1" aria-label="Close resume">&times;</button>
+        </div>
+      </div>
+      <iframe id="resume-frame" src="Resume.pdf" class="w-full h-full" title="Resume PDF"></iframe>
+    </div>
+  </div>
+
+  <script src="index.js" defer></script>
 </body>
 
 </html>
