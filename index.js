@@ -9,72 +9,47 @@ document.addEventListener('DOMContentLoaded', () => {
       const expanded = navToggle.getAttribute('aria-expanded') === 'true';
       navToggle.setAttribute('aria-expanded', String(!expanded));
       mobileNav.classList.toggle('hidden');
-      hamburger.classList.toggle('hidden');
-      closeIcon.classList.toggle('hidden');
+      hamburger?.classList.toggle('hidden');
+      closeIcon?.classList.toggle('hidden');
     });
 
     mobileNav.addEventListener('click', (e) => {
       if (e.target.tagName === 'A') {
         mobileNav.classList.add('hidden');
         navToggle.setAttribute('aria-expanded', 'false');
-        hamburger.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
+        hamburger?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
       }
     });
   }
 
   const backToTop = document.getElementById('back-to-top');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) backToTop.classList.remove('hidden');
-    else backToTop.classList.add('hidden');
-  });
-  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) backToTop.classList.remove('hidden');
+      else backToTop.classList.add('hidden');
+    });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
 
-  const openBtn = document.getElementById('contact-button');
-  const openBtnMobile = document.getElementById('contact-button-mobile');
-  const modal = document.getElementById('contact-modal');
-  const closeBtn = document.getElementById('close-modal-button');
-  const form = document.getElementById('contact-form');
-  const status = document.getElementById('contact-status');
+  const contactBtn = document.getElementById('contact-button');
+  const contactBtnMobile = document.getElementById('contact-button-mobile');
+  const contactModal = document.getElementById('contact-modal');
+  const contactClose = document.getElementById('close-modal-button');
+  const contactForm = document.getElementById('contact-form');
+  const contactStatus = document.getElementById('contact-status');
   const copyEmailBtn = document.getElementById('copy-email');
   const mailtoLink = document.getElementById('mailto-link');
 
-  let previouslyFocused = null;
+  let lastFocusedBeforeModal = null;
   const focusableSelector = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
 
-  function openModal() {
-    previouslyFocused = document.activeElement;
-    modal.classList.remove('hidden');
-    setTimeout(() => {
-      const focusable = modal.querySelectorAll(focusableSelector);
-      if (focusable.length) focusable[0].focus();
-    }, 50);
-    document.body.style.overflow = 'hidden';
-    document.addEventListener('keydown', trapTabKey);
-    document.addEventListener('keydown', escKeyClose);
-  }
-
-  function closeModal() {
-    modal.classList.add('hidden');
-    document.body.style.overflow = '';
-    previouslyFocused?.focus();
-    document.removeEventListener('keydown', trapTabKey);
-    document.removeEventListener('keydown', escKeyClose);
-  }
-
-  function escKeyClose(e) {
-    if (e.key === 'Escape') {
-      if (!document.getElementById('resume-modal').classList.contains('hidden')) closeResumeModal();
-      else closeModal();
-    }
-  }
-
-  function trapTabKey(e) {
+  function trapTab(container, e) {
     if (e.key !== 'Tab') return;
-    const focusable = Array.from(modal.querySelectorAll(focusableSelector));
-    if (!focusable.length) return;
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
+    const focusables = Array.from(container.querySelectorAll(focusableSelector));
+    if (!focusables.length) return;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
     if (e.shiftKey && document.activeElement === first) {
       e.preventDefault();
       last.focus();
@@ -84,98 +59,139 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (openBtn) openBtn.addEventListener('click', openModal);
-  if (openBtnMobile) openBtnMobile.addEventListener('click', openModal);
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
-
-  copyEmailBtn.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText('manasdubey2709@gmail.com');
-      copyEmailBtn.textContent = 'Copied!';
-      setTimeout(() => (copyEmailBtn.textContent = 'Copy email'), 1800);
-    } catch {
-      mailtoLink.click();
-    }
-  });
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('contact-name').value.trim();
-    const email = document.getElementById('contact-email').value.trim();
-    const message = document.getElementById('contact-message').value.trim();
-
-    if (!name || !email || !message) {
-      status.textContent = 'Please complete all fields.';
-      status.classList.remove('hidden');
-      setTimeout(() => status.classList.add('hidden'), 3000);
-      return;
-    }
-
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!re.test(email)) {
-      status.textContent = 'Please enter a valid email address.';
-      status.classList.remove('hidden');
-      setTimeout(() => status.classList.add('hidden'), 3000);
-      return;
-    }
-
-    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:manasdubey2709@gmail.com?subject=${subject}&body=${body}`;
-
-    status.textContent = 'Opening email client...';
-    status.classList.remove('hidden');
+  function openContact() {
+    if (!contactModal) return;
+    lastFocusedBeforeModal = document.activeElement;
+    contactModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
     setTimeout(() => {
-      status.classList.add('hidden');
-      closeModal();
-    }, 1500);
-  });
+      const focusables = contactModal.querySelectorAll(focusableSelector);
+      if (focusables.length) focusables[0].focus();
+    }, 50);
+    document.addEventListener('keydown', escContactHandler);
+    document.addEventListener('keydown', (e) => trapTab(contactModal, e));
+  }
+
+  function closeContact() {
+    if (!contactModal) return;
+    contactModal.classList.add('hidden');
+    document.body.style.overflow = '';
+    try { lastFocusedBeforeModal?.focus(); } catch (e) { }
+    document.removeEventListener('keydown', escContactHandler);
+  }
+
+  function escContactHandler(e) {
+    if (e.key === 'Escape') {
+      if (!resumeModal || resumeModal.classList.contains('hidden')) closeContact();
+      else closeResumeModal();
+    }
+  }
+
+  if (contactBtn) contactBtn.addEventListener('click', openContact);
+  if (contactBtnMobile) contactBtnMobile.addEventListener('click', openContact);
+  if (contactClose) contactClose.addEventListener('click', closeContact);
+  if (contactModal) {
+    contactModal.addEventListener('click', (e) => {
+      if (e.target === contactModal) closeContact();
+    });
+  }
+
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText('manasdubey2709@gmail.com');
+        copyEmailBtn.textContent = 'Copied!';
+        setTimeout(() => (copyEmailBtn.textContent = 'Copy email'), 1500);
+      } catch (err) {
+        mailtoLink?.click();
+      }
+    });
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('contact-name')?.value.trim() || '';
+      const email = document.getElementById('contact-email')?.value.trim() || '';
+      const message = document.getElementById('contact-message')?.value.trim() || '';
+      if (!name || !email || !message) {
+        if (contactStatus) {
+          contactStatus.textContent = 'Please complete all fields.';
+          contactStatus.classList.remove('hidden');
+          setTimeout(() => contactStatus.classList.add('hidden'), 2500);
+        }
+        return;
+      }
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!re.test(email)) {
+        if (contactStatus) {
+          contactStatus.textContent = 'Please enter a valid email.';
+          contactStatus.classList.remove('hidden');
+          setTimeout(() => contactStatus.classList.add('hidden'), 2500);
+        }
+        return;
+      }
+      const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+      window.location.href = `mailto:manasdubey2709@gmail.com?subject=${subject}&body=${body}`;
+      if (contactStatus) {
+        contactStatus.textContent = 'Opening email client...';
+        contactStatus.classList.remove('hidden');
+        setTimeout(() => {
+          contactStatus.classList.add('hidden');
+          closeContact();
+        }, 1200);
+      } else {
+        closeContact();
+      }
+    });
+  }
+
+  const resumeButton = document.getElementById('resume-button');
+  const resumeModal = document.getElementById('resume-modal');
+  const closeResume = document.getElementById('close-resume');
+
+  function openResumeModal() {
+    if (!resumeModal) return;
+    lastFocusedBeforeModal = document.activeElement;
+    resumeModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+      const frame = resumeModal.querySelector('iframe');
+      if (frame) frame.focus();
+    }, 50);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeResumeModal();
+    });
+  }
+
+  function closeResumeModal() {
+    if (!resumeModal) return;
+    resumeModal.classList.add('hidden');
+    document.body.style.overflow = '';
+    try { lastFocusedBeforeModal?.focus(); } catch (e) { }
+  }
+
+  if (resumeButton) resumeButton.addEventListener('click', openResumeModal);
+  if (closeResume) closeResume.addEventListener('click', closeResumeModal);
+  if (resumeModal) {
+    resumeModal.addEventListener('click', (e) => {
+      if (e.target === resumeModal) closeResumeModal();
+    });
+  }
 
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', () => {
       if (mobileNav && !mobileNav.classList.contains('hidden')) {
         mobileNav.classList.add('hidden');
-        navToggle.setAttribute('aria-expanded', 'false');
-        hamburger.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
+        navToggle?.setAttribute('aria-expanded', 'false');
+        hamburger?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
       }
     });
   });
 
-  const resumeButton = document.getElementById('resume-button');
-  const resumeModal = document.getElementById('resume-modal');
-  const closeResume = document.getElementById('close-resume');
-  const resumeFrame = document.getElementById('resume-frame');
-
-  function openResumeModal() {
-    resumeModal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-    setTimeout(() => {
-      resumeFrame.focus();
-    }, 60);
-  }
-
-  function closeResumeModal() {
-    resumeModal.classList.add('hidden');
-    document.body.style.overflow = '';
-    const resumeOpenNew = document.getElementById('resume-open-new');
-    resumeOpenNew?.focus();
-  }
-
-  resumeButton.addEventListener('click', () => {
-    openResumeModal();
+  window.addEventListener('error', (e) => {
+    console.warn('JS runtime error:', e);
   });
-
-  closeResume.addEventListener('click', () => {
-    closeResumeModal();
-  });
-
-  resumeModal.addEventListener('click', (e) => {
-    if (e.target === resumeModal) closeResumeModal();
-  });
-
 });

@@ -5,9 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manas Dubey | Portfolio</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -24,45 +26,47 @@
       }
     }
   </script>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="bg-custom-bg-dark text-custom-text-light min-h-screen font-inter scroll-smooth">
 
+  <!-- Navbar -->
   <header
     class="p-4 md:p-6 flex items-center justify-between sticky top-0 bg-custom-bg-dark z-50 border-b border-white/5">
-    <a href="#hero"
-      class="bg-white/10 text-custom-text-light rounded-full p-2 px-4 shadow-sm hover:bg-white/20 transition-colors duration-300"
-      aria-label="Home">
+    <a href="#hero" class="bg-white/10 text-custom-text-light rounded-full p-2 px-4 shadow-sm hover:bg-white/20">
       <h1 class="text-lg md:text-xl font-bold">MD</h1>
     </a>
 
     <nav class="hidden md:flex items-center space-x-6">
-      <a href="#about" class="text-sm md:text-base hover:text-custom-accent">About</a>
-      <a href="#tech" class="text-sm md:text-base hover:text-custom-accent">Tech</a>
-      <a href="#experience" class="text-sm md:text-base hover:text-custom-accent">Experience</a>
-      <a href="#projects" class="text-sm md:text-base hover:text-custom-accent">Projects</a>
+      <a href="#about" class="hover:text-custom-accent">About</a>
+      <a href="#tech" class="hover:text-custom-accent">Tech</a>
+      <a href="#experience" class="hover:text-custom-accent">Experience</a>
+      <a href="#projects" class="hover:text-custom-accent">Projects</a>
       <button id="contact-button"
-        class="bg-custom-accent text-black px-3 py-2 rounded-lg font-semibold shadow hover:bg-blue-500">Contact</button>
+        class="bg-custom-accent text-black px-3 py-2 rounded-lg hover:bg-blue-500">Contact</button>
     </nav>
 
+    <!-- Mobile Section -->
     <div class="md:hidden flex items-center gap-3">
       <button id="contact-button-mobile"
-        class="bg-custom-accent text-black px-3 py-2 rounded-lg font-semibold shadow hover:bg-blue-500">Contact</button>
+        class="bg-custom-accent text-black px-3 py-2 rounded-lg hover:bg-blue-500">Contact</button>
       <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav"
-        class="p-2 rounded-md bg-white/10 hover:bg-white/20" aria-label="Toggle navigation">
-        <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor" class="text-custom-text-light">
+        class="p-2 rounded-md bg-white/10 hover:bg-white/20">
+        <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+          class="text-custom-text-light">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
         </svg>
-        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor" class="hidden text-custom-text-light">
+        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+          class="hidden text-custom-text-light">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
   </header>
 
+  <!-- Mobile Nav -->
   <div id="mobile-nav" class="md:hidden bg-custom-bg-dark border-b border-white/5 hidden">
     <nav class="flex flex-col p-4 gap-3">
       <a href="#about" class="py-2 px-3 rounded hover:bg-white/5">About</a>
@@ -72,65 +76,58 @@
     </nav>
   </div>
 
+  <!-- HERO -->
   <main class="container mx-auto px-4 py-8">
     <section id="hero"
       class="flex flex-col-reverse md:flex-row items-center justify-center gap-8 min-h-[calc(100vh-120px)] p-6 animate-fadeInUp">
+
       <div class="flex-1 text-center md:text-left">
         <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4">Manas Dubey</h1>
-        <p class="text-lg md:text-xl text-gray-400 font-medium max-w-lg mx-auto md:mx-0">
+        <p class="text-lg md:text-xl text-gray-400 max-w-lg mx-auto md:mx-0">
           Crafting ideas into reality through expert development.
         </p>
 
         <div class="flex items-center justify-center md:justify-start space-x-4 mt-6">
-          <a href="https://www.linkedin.com/in/manas-dubey-415385296" target="_blank" aria-label="LinkedIn profile">
-            <img src="image/LinkedIn.png" alt="LinkedIn"
-              class="w-10 h-10 rounded-full hover:scale-110 transition-transform" loading="lazy" />
+          <a href="https://www.linkedin.com/in/manas-dubey-415385296" target="_blank">
+            <img src="image/LinkedIn.png" alt="LinkedIn" class="w-10 h-10 rounded-full hover:scale-110" />
           </a>
-          <a href="https://github.com/vikingmanas" target="_blank" aria-label="GitHub profile">
-            <img src="image/GitHub.png" alt="GitHub" class="w-10 h-10 rounded-full hover:scale-110 transition-transform"
-              loading="lazy" />
+          <a href="https://github.com/vikingmanas" target="_blank">
+            <img src="image/GitHub.png" alt="GitHub" class="w-10 h-10 rounded-full hover:scale-110" />
           </a>
-          <a href="https://www.instagram.com/beingmanas009" target="_blank" aria-label="Instagram profile">
-            <img src="image/Instagram.png" alt="Instagram"
-              class="w-10 h-10 rounded-full hover:scale-110 transition-transform" loading="lazy" />
+          <a href="https://www.instagram.com/beingmanas009" target="_blank">
+            <img src="image/Instagram.png" alt="Instagram" class="w-10 h-10 rounded-full hover:scale-110" />
           </a>
         </div>
 
         <div class="mt-6 flex justify-center md:justify-start gap-3">
-          <a href="#projects"
-            class="inline-flex items-center gap-2 bg-white/8 px-4 py-2 rounded-lg hover:bg-white/12">See Projects</a>
-          <a class="inline-flex items-center gap-2 bg-custom-accent text-black px-4 py-2 rounded-lg hover:bg-blue-500"
-            href="mailto:manasdubey2709@gmail.com">Email Me</a>
+          <a href="#projects" class="bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20">See Projects</a>
+          <a href="mailto:manasdubey2709@gmail.com"
+            class="bg-custom-accent text-black px-4 py-2 rounded-lg hover:bg-blue-500">Email Me</a>
         </div>
       </div>
 
       <div class="flex-1 flex flex-col items-center md:items-end gap-4">
-        <img src="image/ME.jpg" alt="Portrait of Manas"
-          class="w-44 h-44 md:w-72 md:h-72 rounded-full shadow-lg border-4 border-custom-accent/50 object-cover"
-          loading="lazy" />
-        <div class="flex gap-3">
-          <button id="resume-button"
-            class="bg-white/8 text-white px-4 py-2 rounded-lg font-semibold hover:bg-white/12">View Resume</button>
-          <a href="Resume.pdf" target="_blank" id="resume-open-new" class="hidden">Open PDF</a>
-        </div>
+        <img src="image/ME.jpg" alt="Manas"
+          class="w-44 h-44 md:w-72 md:h-72 rounded-full border-4 border-custom-accent/50 object-cover" />
+        <button id="resume-button" class="bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20">View Resume</button>
       </div>
+
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="my-12 p-6 md:p-10 bg-custom-card-dark rounded-xl shadow-lg animate-fadeInUp">
-      <h2 class="text-2xl md:text-3xl font-bold text-center text-white mb-6">About Me</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">About Me</h2>
+
       <div class="flex flex-col md:flex-row items-center md:space-x-8">
-        <div class="flex-shrink-0 w-full md:w-1/3 mb-6 md:mb-0">
-          <img src="image/image2.jpg" alt="About Me"
-            class="rounded-xl shadow-lg border border-white/10 object-cover w-full" loading="lazy" />
-        </div>
-        <div class="flex-1">
-          <p class="text-sm md:text-base text-gray-300 leading-relaxed text-justify">
-            I build reliable backend systems and responsive web interfaces. I am proficient in Java, Python, and
-            JavaScript, and I work with Node.js, React/Next.js, Express, and databases such as MongoDB and PostgreSQL. I
-            design clean APIs, write maintainable code, and implement testing and basic CI workflows. I prioritize
-            accessibility and performance, and I can take a feature from design to production: architecture,
-            implementation, and deployment.
+        <img src="image/image2.jpg" class="rounded-xl shadow-lg border border-white/10 w-full md:w-1/3" />
+
+        <div class="flex-1 mt-6 md:mt-0">
+          <p class="text-gray-300 text-sm md:text-base leading-relaxed text-justify">
+            I build reliable backend systems and responsive web interfaces. I work with Java, Python, JavaScript,
+            Node.js, React/Next.js, Express, MongoDB and PostgreSQL. I design clean APIs, write maintainable code,
+            and deploy scalable features while focusing on accessibility and performance.
           </p>
+
           <ul class="mt-4 grid grid-cols-2 gap-2 text-xs md:text-sm text-gray-300">
             <li><strong>Location:</strong> Greater Noida West</li>
             <li><strong>Education:</strong> B.Tech CSE</li>
@@ -143,162 +140,195 @@
       </div>
     </section>
 
+    <!-- TECHNOLOGIES -->
     <section id="tech" class="my-12 p-6 md:p-10 bg-custom-card-dark rounded-xl shadow-lg animate-fadeInUp">
-      <h2 class="text-2xl md:text-3xl font-bold text-center text-white mb-6">Technologies</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">Technologies</h2>
+
       <div class="flex flex-wrap items-center justify-center gap-4 md:gap-6">
-        <img src="image/Htmllogo.png" alt="HTML" class="tech-icon" />
-        <img src="image/Css.png" alt="CSS" class="tech-icon" />
-        <img src="image/js.png" alt="JavaScript" class="tech-icon" />
-        <img src="image/bootstrap.png" alt="Bootstrap" class="tech-icon" />
-        <img src="image/Tailwind.png" alt="Tailwind CSS" class="tech-icon" />
-        <img src="image/react.png" alt="React" class="tech-icon" />
-        <img src="image/SQL-2.png" alt="SQL" class="tech-icon" />
+        <img src="image/Htmllogo.png" class="tech-icon" />
+        <img src="image/Css.png" class="tech-icon" />
+        <img src="image/js.png" class="tech-icon" />
+        <img src="image/bootstrap.png" class="tech-icon" />
+        <img src="image/Tailwind.png" class="tech-icon" />
+        <img src="image/react.png" class="tech-icon" />
+        <img src="image/SQL-2.png" class="tech-icon" />
       </div>
     </section>
 
-    <section id="experience" class="my-12 p-6 md:p-10 bg-custom-card-dark rounded-xl shadow-lg animate-fadeInUp">
-      <h2 class="text-2xl md:text-3xl font-bold text-center text-white mb-6">Experiences &amp; Learnings</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="exp-card">
-          <img src="image/Walmart.png" alt="Walmart Tech" class="exp-img" loading="lazy" />
-          <div class="p-4">
-            <h3 class="exp-title">Walmart Tech</h3>
-            <p class="exp-text">Worked on real-world tech challenges.</p>
-          </div>
-        </div>
-        <div class="exp-card">
-          <img src="image/GSSOC.png" alt="GirlScript Summer of Code" class="exp-img" loading="lazy" />
-          <div class="p-4">
-            <h3 class="exp-title">GSSoC 2024 Extended – Open Source Contributor</h3>
-            <p class="exp-text">
-              Contributed to open-source projects as part of GirlScript Summer of Code 2024 Extended.
-              Ranked <strong>433 out of 50,000+ participants</strong> globally, earning <strong>1000 points</strong>,
-              <strong>7 badges</strong>, and completing <strong>2 pull requests</strong>.
+    <!-- EXPERIENCE -->
+    <section id="experience" class="my-16 p-6 md:p-10 bg-custom-card-dark rounded-xl shadow-lg animate-fadeInUp">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-8">Experiences & Learnings</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="exp-card bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition flex flex-col">
+          <img src="image/Walmart.png" class="exp-img h-36 w-full object-cover" />
+          <div class="p-4 flex flex-col flex-grow">
+            <h3 class="text-xl font-semibold text-white mb-2">Walmart Tech</h3>
+            <p class="text-gray-400 text-sm flex-grow">
+              Explored distributed systems, backend architecture, and real engineering workflows in Walmart’s virtual
+              tech experience.
             </p>
           </div>
         </div>
 
-        <div class="exp-card">
-          <img src="image/SIH.jpg" alt="Smart India Hackathon" class="exp-img" loading="lazy" />
-          <div class="p-4">
-            <h3 class="exp-title">Smart India Hackathon</h3>
-            <p class="exp-text">Selected in pre-qualifiers for project demo.</p>
+        <div class="exp-card bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition flex flex-col">
+          <img src="image/GSSOC.png" class="exp-img h-36 w-full object-cover" />
+          <div class="p-4 flex flex-col flex-grow">
+            <h3 class="text-xl font-semibold text-white mb-2">GSSoC 2024 Extended</h3>
+            <p class="text-gray-400 text-sm flex-grow">
+              Ranked <strong>433 out of 50,000+</strong>. Earned <strong>1000 points</strong>, completed PRs, and
+              contributed to scalable open-source repositories.
+            </p>
           </div>
         </div>
-        <div class="exp-card">
-          <img src="image/internship.jpg" alt="AI/ML Internship" class="exp-img" loading="lazy" />
-          <div class="p-4">
-            <h3 class="exp-title">AI/ML Internship</h3>
-            <p class="exp-text">AI/ML internship by Google &amp; AICTE.</p>
+
+        <div class="exp-card bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition flex flex-col">
+          <img src="image/SIH.jpg" class="exp-img h-36 w-full object-cover" />
+          <div class="p-4 flex flex-col flex-grow">
+            <h3 class="text-xl font-semibold text-white mb-2">Smart India Hackathon 2024</h3>
+            <p class="text-gray-400 text-sm flex-grow">
+              Built <strong>LawBot</strong>. Ranked <strong>Top 50 out of 300+ teams</strong> in Pre-Qualifier rounds.
+              Learned rapid prototyping & problem-solving.
+            </p>
           </div>
         </div>
+
+        <div class="exp-card bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition flex flex-col">
+          <img src="image/internship.jpg" class="exp-img h-36 w-full object-cover" />
+          <div class="p-4 flex flex-col flex-grow">
+            <h3 class="text-xl font-semibold text-white mb-2">AI/ML Internship</h3>
+            <p class="text-gray-400 text-sm flex-grow">
+              Completed 10-week AI/ML internship (AICTE × Google Developers). Built ML models & TensorFlow pipelines.
+            </p>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- PROJECTS -->
+    <section id="projects" class="my-16 p-6 md:p-10 bg-custom-card-dark rounded-xl shadow-lg animate-fadeInUp">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-8">Projects</h2>
 
-      <!-- Portfolio -->
-      <article class="project-card">
-        <img src="image/PORT.png" class="project-img" loading="lazy" alt="Portfolio Website" />
-        <div class="project-overlay">
-          <div class="text-center p-4">
-            <h3 class="project-title">Portfolio Website</h3>
-            <p class="project-desc">Personal portfolio with responsive design.</p>
-            <a href="https://github.com/vikingmanas" target="_blank" class="project-btn">View Code</a>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Portfolio -->
+        <article class="project-card relative rounded-lg overflow-hidden shadow-lg hover:scale-105 transition">
+          <img src="image/PORT.png" class="w-full h-48 object-cover" />
+          <div
+            class="project-overlay absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 flex items-center justify-center transition">
+            <div class="text-center p-4">
+              <h3 class="text-xl font-semibold text-white mb-2">Portfolio Website</h3>
+              <p class="text-gray-300 text-sm mb-3">Personal portfolio with responsive design.</p>
+              <a href="https://github.com/vikingmanas" target="_blank"
+                class="bg-custom-accent text-black px-4 py-2 rounded-full text-sm">View Code</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- MedGen -->
-      <article class="project-card">
-        <img src="image/MED.png" class="project-img" loading="lazy" alt="MedGen" />
-        <div class="project-overlay">
-          <div class="text-center p-4">
-            <h3 class="project-title">MedGen</h3>
-            <p class="project-desc">AI chatbot using LangChain &amp; Pinecone for medical insights.</p>
-            <a href="https://github.com/vikingmanas/MedGen" target="_blank" class="project-btn">View Code</a>
+        <!-- MedGen -->
+        <article class="project-card relative rounded-lg overflow-hidden shadow-lg hover:scale-105 transition">
+          <img src="image/MED.png" class="w-full h-48 object-cover" />
+          <div
+            class="project-overlay absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 flex items-center justify-center transition">
+            <div class="text-center p-4">
+              <h3 class="text-xl font-semibold text-white mb-2">MedGen</h3>
+              <p class="text-gray-300 text-sm mb-3">AI chatbot using LangChain & Pinecone for medical insights.</p>
+              <a href="https://github.com/vikingmanas/MedGen" target="_blank"
+                class="bg-custom-accent text-black px-4 py-2 rounded-full text-sm">View Code</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- MentalHealthGen -->
-      <article class="project-card">
-        <img src="image/MentalHealth.png" class="project-img" loading="lazy" alt="Mental Health Gen" />
-        <div class="project-overlay">
-          <div class="text-center p-4">
-            <h3 class="project-title">MentalHealthGen</h3>
-            <p class="project-desc">AI assistant for mental wellness with empathetic and safe interaction.</p>
-            <a href="https://github.com/vikingmanas/MentalHealthGen" target="_blank" class="project-btn">View Code</a>
+        <!-- MentalHealthGen -->
+        <article class="project-card relative rounded-lg overflow-hidden shadow-lg hover:scale-105 transition">
+          <img src="image/MentalHealth.png" class="w-full h-48 object-cover" />
+          <div
+            class="project-overlay absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 flex items-center justify-center transition">
+            <div class="text-center p-4">
+              <h3 class="text-xl font-semibold text-white mb-2">MentalHealthGen</h3>
+              <p class="text-gray-300 text-sm mb-3">AI assistant for mental wellness with empathetic interaction.</p>
+              <a href="https://github.com/vikingmanas/MentalHealthGen" target="_blank"
+                class="bg-custom-accent text-black px-4 py-2 rounded-full text-sm">View Code</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- Two-way communication project (Bridge_2.0) -->
-      <article class="project-card">
-        <img src="image/TwoWay.png" class="project-img" loading="lazy" alt="Two-way communication" />
-        <div class="project-overlay">
-          <div class="text-center p-4">
-            <h3 class="project-title">Bridge_2.0</h3>
-            <p class="project-desc">Real-time two-way communication platform with fast message exchange.</p>
-            <a href="https://github.com/vikingmanas/Bridge_2.0" target="_blank" class="project-btn">View Code</a>
+        <!-- Bridge_2.0 -->
+        <article class="project-card relative rounded-lg overflow-hidden shadow-lg hover:scale-105 transition">
+          <img src="image/TwoWay.png" class="w-full h-48 object-cover" />
+          <div
+            class="project-overlay absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 flex items-center justify-center transition">
+            <div class="text-center p-4">
+              <h3 class="text-xl font-semibold text-white mb-2">Bridge_2.0</h3>
+              <p class="text-gray-300 text-sm mb-3">Two-way sign language communication system with AI translation.</p>
+              <a href="https://github.com/vikingmanas/Bridge_2.0" target="_blank"
+                class="bg-custom-accent text-black px-4 py-2 rounded-full text-sm">View Code</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-    </div>
+      </div>
+    </section>
 
-    <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-[100] hidden"
-      role="dialog" aria-modal="true" aria-labelledby="contact-title">
-      <div class="bg-custom-card-dark p-6 rounded-xl shadow-2xl max-w-lg w-full m-4 border border-white/10">
+    <!-- CONTACT MODAL -->
+    <div id="contact-modal" class="fixed inset-0 bg-black/60 flex items-center justify-center hidden z-[100]">
+      <div class="bg-custom-card-dark p-6 rounded-xl shadow-2xl max-w-lg w-full border border-white/10">
         <div class="flex justify-between items-center mb-4">
-          <h3 id="contact-title" class="text-xl font-bold text-white">Contact Me</h3>
-          <button id="close-modal-button" class="text-gray-400 hover:text-white text-2xl leading-none"
-            aria-label="Close contact form">&times;</button>
+          <h3 class="text-xl font-bold">Contact Me</h3>
+          <button id="close-modal-button" class="text-gray-400 hover:text-white text-2xl">&times;</button>
         </div>
-        <form id="contact-form" class="space-y-4" novalidate>
+
+        <form id="contact-form" class="space-y-4">
           <label class="block">
-            <span class="text-gray-300 text-sm">Name</span>
+            <span>Name</span>
             <input type="text" id="contact-name"
-              class="mt-1 w-full rounded bg-black/30 border border-white/5 p-2 text-white" required />
+              class="mt-1 w-full bg-black/30 border border-white/10 p-2 rounded text-white" required />
           </label>
+
           <label class="block">
-            <span class="text-gray-300 text-sm">Email</span>
+            <span>Email</span>
             <input type="email" id="contact-email"
-              class="mt-1 w-full rounded bg-black/30 border border-white/5 p-2 text-white" required />
+              class="mt-1 w-full bg-black/30 border border-white/10 p-2 rounded text-white" required />
           </label>
+
           <label class="block">
-            <span class="text-gray-300 text-sm">Message</span>
+            <span>Message</span>
             <textarea id="contact-message" rows="4"
-              class="mt-1 w-full rounded bg-black/30 border border-white/5 p-2 text-white" required></textarea>
+              class="mt-1 w-full bg-black/30 border border-white/10 p-2 rounded text-white" required></textarea>
           </label>
-          <div class="flex items-center gap-3">
-            <button type="submit" class="bg-custom-accent text-black px-4 py-2 rounded-lg font-semibold">Send</button>
-            <button id="copy-email" type="button" class="bg-white/8 text-white px-3 py-2 rounded-lg">Copy email</button>
-            <a href="mailto:manasdubey2709@gmail.com" id="mailto-link" class="sr-only">Email link</a>
+
+          <div class="flex gap-3">
+            <button type="submit" class="bg-custom-accent text-black px-4 py-2 rounded-lg">Send</button>
+            <button id="copy-email" type="button" class="bg-white/10 text-white px-4 py-2 rounded-lg">Copy
+              email</button>
           </div>
-          <p id="contact-status" class="text-sm text-gray-400 hidden" role="status"></p>
+
+          <p id="contact-status" class="text-gray-400 text-sm hidden"></p>
         </form>
       </div>
     </div>
 
-    <div id="resume-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[110] hidden"
-      role="dialog" aria-modal="true" aria-labelledby="resume-title">
+    <!-- RESUME MODAL -->
+    <div id="resume-modal" class="fixed inset-0 bg-black/70 flex items-center justify-center hidden z-[100]">
       <div
         class="bg-black w-[92vw] md:w-[80vw] lg:w-[70vw] h-[80vh] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-        <div class="flex items-center justify-between p-3 bg-custom-card-dark border-b border-white/5">
-          <h3 id="resume-title" class="text-lg font-semibold text-white">Resume</h3>
-          <div class="flex items-center gap-2">
-            <a id="resume-download" href="Resume.pdf" download
-              class="bg-white/8 text-white px-3 py-1 rounded-md">Download</a>
-            <button id="close-resume" class="text-gray-300 text-2xl px-3 py-1"
-              aria-label="Close resume">&times;</button>
+
+        <div class="flex items-center justify-between p-3 bg-custom-card-dark border-b border-white/10">
+          <h3 class="text-lg font-semibold">Resume</h3>
+          <div class="flex items-center gap-3">
+            <a href="Resume.pdf" download class="bg-white/10 px-3 py-1 rounded">Download</a>
+            <button id="close-resume" class="text-gray-300 text-2xl">&times;</button>
           </div>
         </div>
-        <iframe id="resume-frame" src="Resume.pdf" class="w-full h-full" title="Resume PDF"></iframe>
+
+        <iframe src="Resume.pdf" class="w-full h-full"></iframe>
       </div>
     </div>
 
     <script src="index.js" defer></script>
+
 </body>
 
 </html>
