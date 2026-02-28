@@ -42,24 +42,29 @@
 </head>
 
 <body class="bg-apple-bg text-apple-text font-sans antialiased">
-  
+
   <!-- Navbar -->
   <header class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <a href="#hero" class="flex-shrink-0 group">
-          <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all duration-300">
+          <div
+            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all duration-300">
             <span class="text-lg font-bold">MD</span>
           </div>
         </a>
 
         <!-- Desktop Nav -->
         <nav class="hidden md:flex items-center space-x-8">
-          <a href="#about" class="text-sm font-medium text-apple-subtitle hover:text-white transition-colors duration-200">About</a>
-          <a href="#tech" class="text-sm font-medium text-apple-subtitle hover:text-white transition-colors duration-200">Stack</a>
-          <a href="#experience" class="text-sm font-medium text-apple-subtitle hover:text-white transition-colors duration-200">Experience</a>
-          <a href="#projects" class="text-sm font-medium text-apple-subtitle hover:text-white transition-colors duration-200">Projects</a>
+          <a href="#about"
+            class="text-sm font-medium text-apple-subtitle hover:text-white transition-colors duration-200">About</a>
+          <a href="#tech"
+            class="text-sm font-medium text-apple-subtitle hover:text-white transition-colors duration-200">Stack</a>
+          <a href="#experience"
+            class="text-sm font-medium text-apple-subtitle hover:text-white transition-colors duration-200">Experience</a>
+          <a href="#projects"
+            class="text-sm font-medium text-apple-subtitle hover:text-white transition-colors duration-200">Projects</a>
           <div class="flex items-center space-x-4 ml-4 pl-4 border-l border-white/10">
             <button id="resume-button" class="btn-secondary text-sm px-4 py-1.5">Resume</button>
             <button id="contact-button" class="btn-primary text-sm px-4 py-1.5">Contact</button>
@@ -69,11 +74,14 @@
         <!-- Mobile menu button -->
         <div class="md:hidden flex items-center gap-3">
           <button id="contact-button-mobile" class="btn-primary text-xs px-3 py-1.5">Contact</button>
-          <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" class="p-2 rounded-md bg-white/5 hover:bg-white/10 transition-colors">
-            <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor">
+          <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav"
+            class="p-2 rounded-md bg-white/5 hover:bg-white/10 transition-colors">
+            <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+              stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
             </svg>
-            <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" class="hidden">
+            <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+              stroke="currentColor" class="hidden">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
@@ -85,58 +93,80 @@
   <!-- Mobile Nav -->
   <div id="mobile-nav" class="md:hidden glass-nav hidden fixed w-full z-40 top-16 border-t border-white/10">
     <div class="px-4 pt-2 pb-6 space-y-2">
-      <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-apple-subtitle hover:text-white hover:bg-white/5">About</a>
-      <a href="#tech" class="block px-3 py-2 rounded-md text-base font-medium text-apple-subtitle hover:text-white hover:bg-white/5">Stack</a>
-      <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-apple-subtitle hover:text-white hover:bg-white/5">Experience</a>
-      <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-apple-subtitle hover:text-white hover:bg-white/5">Projects</a>
+      <a href="#about"
+        class="block px-3 py-2 rounded-md text-base font-medium text-apple-subtitle hover:text-white hover:bg-white/5">About</a>
+      <a href="#tech"
+        class="block px-3 py-2 rounded-md text-base font-medium text-apple-subtitle hover:text-white hover:bg-white/5">Stack</a>
+      <a href="#experience"
+        class="block px-3 py-2 rounded-md text-base font-medium text-apple-subtitle hover:text-white hover:bg-white/5">Experience</a>
+      <a href="#projects"
+        class="block px-3 py-2 rounded-md text-base font-medium text-apple-subtitle hover:text-white hover:bg-white/5">Projects</a>
     </div>
   </div>
 
   <main>
     <!-- HERO SECTION -->
-    <section id="hero" class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden flex flex-col items-center justify-center min-h-[90vh]">
+    <section id="hero"
+      class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden flex flex-col items-center justify-center min-h-[90vh]">
       <!-- Background subtle gradient -->
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-apple-accent/20 rounded-full blur-[120px] opacity-20 pointer-events-none"></div>
-      
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-apple-accent/20 rounded-full blur-[120px] opacity-20 pointer-events-none">
+      </div>
+
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div class="text-center max-w-4xl mx-auto flex flex-col items-center animate-fadeInUp">
-          
-          <div class="mb-8 w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-tr from-white/10 to-white/30 backdrop-blur-sm">
-            <img src="image/ME.jpg" alt="Manas Dubey" class="w-full h-full rounded-full object-cover shadow-2xl" />
+        <div class="text-center max-w-4xl mx-auto flex flex-col items-center reveal-on-scroll">
+
+          <div
+            class="mb-8 w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-tr from-white/10 to-white/30 backdrop-blur-sm group relative">
+            <div
+              class="absolute inset-0 bg-apple-accent/20 rounded-full blur-xl group-hover:bg-apple-accent/40 transition-colors">
+            </div>
+            <img src="image/ME.HEIC" onerror="this.onerror=null;this.src='image/image2.jpg';" alt="Manas Dubey"
+              class="w-full h-full rounded-full object-cover shadow-2xl relative z-10" />
           </div>
 
-          <p class="text-sm md:text-base font-semibold tracking-wide text-apple-subtitle uppercase mb-4 tracking-widest">
+          <p
+            class="text-sm md:text-base font-semibold tracking-wide text-apple-subtitle uppercase mb-4 tracking-widest">
             Computer Science Student
           </p>
-          
+
           <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-gradient pb-2">
             Manas Dubey
           </h1>
-          
+
           <h2 class="text-xl md:text-2xl font-medium text-apple-subtitle mb-8 max-w-2xl mx-auto leading-relaxed">
-            Full Stack Developer <span class="text-white/20 mx-2">|</span> iOS App Developer <span class="text-white/20 mx-2">|</span> AI/ML Enthusiast
+            Full Stack Developer <span class="text-white/20 mx-2">|</span> iOS App Developer <span
+              class="text-white/20 mx-2">|</span> AI/ML Enthusiast
           </h2>
 
           <p class="text-base md:text-lg text-apple-subtitle/80 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-            Crafting elegant, industry-standard digital experiences. Passionate about building robust backend systems, sleek mobile apps, and scalable web platforms.
+            Crafting elegant, industry-standard digital experiences. Passionate about building robust backend systems,
+            sleek mobile apps, and scalable web platforms.
           </p>
-          
+
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#projects" class="btn-primary w-full sm:w-auto justify-center">
               View Work
             </a>
             <a href="Resume.pdf" download class="btn-secondary w-full sm:w-auto justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
               Download Resume
             </a>
           </div>
 
           <!-- Social Links -->
           <div class="mt-12 flex items-center justify-center gap-6">
-            <a href="https://www.linkedin.com/in/manas-dubey-415385296" target="_blank" class="text-apple-subtitle hover:text-white transition-colors hover:scale-110 duration-300">
+            <a href="https://www.linkedin.com/in/manas-dubey-415385296" target="_blank"
+              class="text-apple-subtitle hover:text-white transition-colors hover:scale-110 duration-300">
               <i class="devicon-linkedin-plain text-2xl"></i>
             </a>
-            <a href="https://github.com/vikingmanas" target="_blank" class="text-apple-subtitle hover:text-white transition-colors hover:scale-110 duration-300">
+            <a href="https://github.com/vikingmanas" target="_blank"
+              class="text-apple-subtitle hover:text-white transition-colors hover:scale-110 duration-300">
               <i class="devicon-github-original text-2xl"></i>
             </a>
           </div>
@@ -146,25 +176,29 @@
 
     <!-- ABOUT SECTION -->
     <section id="about" class="py-20 bg-apple-card/30">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 animate-fadeInUp">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 reveal-on-scroll">
         <div class="text-center mb-16">
           <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">About Me</h2>
           <div class="w-12 h-1 bg-apple-accent mx-auto rounded-full"></div>
         </div>
-        
+
         <div class="apple-card p-8 md:p-12">
           <div class="flex flex-col md:flex-row gap-10 items-center">
             <div class="w-full md:w-1/3 flex justify-center">
-              <img src="image/image2.jpg" alt="Profile" class="rounded-2xl w-full max-w-sm object-cover aspect-[4/5] shadow-2xl border border-white/10" />
+              <img src="image/image2.jpg" alt="Profile"
+                class="rounded-2xl w-full max-w-sm object-cover aspect-[4/5] shadow-2xl border border-white/10" />
             </div>
-            
+
             <div class="flex-1">
               <h3 class="text-2xl font-semibold mb-4">Engineering reliable systems with functional aesthetics.</h3>
               <p class="text-apple-subtitle leading-relaxed mb-6 font-light">
-                I am a 3rd-year Computer Science student preparing for industry impact. I specialize in building reliable backend systems and responsive front-end interfaces. Through my experience, I have expanded my focus to include iOS App Development using Swift. 
+                I am a 3rd-year Computer Science student preparing for industry impact. I specialize in building
+                reliable backend systems and responsive front-end interfaces. Through my experience, I have expanded my
+                focus to include iOS App Development using Swift.
               </p>
               <p class="text-apple-subtitle leading-relaxed mb-8 font-light">
-                Whether deploying scalable features, designing clean APIs, or crafting native mobile experiences, I focus on code quality, performance, and accessibility.
+                Whether deploying scalable features, designing clean APIs, or crafting native mobile experiences, I
+                focus on code quality, performance, and accessibility.
               </p>
 
               <div class="grid grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-4">
@@ -190,13 +224,15 @@
     <!-- TECH STACK SECTION -->
     <section id="tech" class="py-24">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 animate-fadeInUp">
+        <div class="text-center mb-16 reveal-on-scroll">
           <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Technical Arsenal</h2>
-          <p class="text-apple-subtitle max-w-2xl mx-auto">Industry-standard tools and frameworks I use to bring ideas to life.</p>
+          <p class="text-apple-subtitle max-w-2xl mx-auto">Industry-standard tools and frameworks I use to bring ideas
+            to life.</p>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 animate-fadeInUp delay-100">
-          
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 reveal-on-scroll delay-100">
+
           <div class="tech-item group">
             <i class="devicon-swift-plain transition-colors group-hover:text-[#F05138]"></i>
             <span class="text-xs font-medium text-apple-subtitle group-hover:text-white">Swift</span>
@@ -254,31 +290,42 @@
     <!-- PROJECTS SECTION -->
     <section id="projects" class="py-24 bg-apple-card/30">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 animate-fadeInUp">
+        <div class="text-center mb-16 reveal-on-scroll">
           <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Featured Projects</h2>
           <div class="w-12 h-1 bg-apple-accent mx-auto rounded-full mb-4"></div>
           <p class="text-apple-subtitle max-w-2xl mx-auto">Selected works demonstrating real-world problem solving.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 animate-fadeInUp delay-100">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 reveal-on-scroll delay-100">
 
           <!-- MoleVerse (iOS) -->
           <article class="apple-card group flex flex-col h-full">
             <div class="card-image-wrapper h-64 bg-black overflow-hidden relative border-b border-white/10">
-              <img src="image/MoleVerse.png" alt="MoleVerse App Preview" class="card-image w-full h-full object-cover object-center" />
+              <img src="image/MoleVerse.png" alt="MoleVerse App Preview"
+                class="card-image w-full h-full object-cover object-center" />
             </div>
             <div class="p-8 flex flex-col flex-grow">
               <div class="flex items-center gap-2 mb-3">
-                <span class="px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase bg-apple-accent/20 text-apple-accent rounded-full">iOS App</span>
-                <span class="px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase bg-white/10 text-white rounded-full">Swift</span>
+                <span
+                  class="px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase bg-apple-accent/20 text-apple-accent rounded-full">iOS
+                  App</span>
+                <span
+                  class="px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase bg-white/10 text-white rounded-full">Swift</span>
               </div>
-              <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-apple-accent transition-colors">MoleVerse</h3>
+              <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-apple-accent transition-colors">MoleVerse
+              </h3>
               <p class="text-apple-subtitle text-sm mb-6 flex-grow font-light leading-relaxed">
-                A sleek, responsive iOS application prioritizing elegant design and flawless user interaction. Built entirely in Swift with deep integration of modern Apple UI principles and fluid animations.
+                A sleek, responsive iOS application prioritizing elegant design and flawless user interaction. Built
+                entirely in Swift with deep integration of modern Apple UI principles and fluid animations.
               </p>
               <div class="mt-auto">
-                <a href="#" class="inline-flex items-center text-sm font-medium text-white hover:text-apple-accent transition-colors gap-2">
-                  View Case Study <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <a href="#"
+                  class="inline-flex items-center text-sm font-medium text-white hover:text-apple-accent transition-colors gap-2">
+                  View Case Study <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </a>
               </div>
             </div>
@@ -287,19 +334,24 @@
           <!-- MedGen -->
           <article class="apple-card group flex flex-col h-full">
             <div class="card-image-wrapper h-64 bg-black overflow-hidden relative border-b border-white/10">
-              <img src="image/MED.png" alt="MedGen Preview" class="card-image w-full h-full object-cover object-center" />
+              <img src="image/MED.png" alt="MedGen Preview"
+                class="card-image w-full h-full object-cover object-center" />
             </div>
             <div class="p-8 flex flex-col flex-grow">
               <div class="flex flex-wrap items-center gap-2 mb-3">
-                <span class="px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase bg-[#3776AB]/30 text-[#60a5fa] rounded-full">Python</span>
-                <span class="px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase bg-white/10 text-white rounded-full">AI/ML</span>
+                <span
+                  class="px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase bg-[#3776AB]/30 text-[#60a5fa] rounded-full">Python</span>
+                <span
+                  class="px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase bg-white/10 text-white rounded-full">AI/ML</span>
               </div>
               <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-apple-accent transition-colors">MedGen</h3>
               <p class="text-apple-subtitle text-sm mb-6 flex-grow font-light leading-relaxed">
-                An advanced AI chatbot leveraging LangChain & Pinecone for precise medical insights. Features an intelligent retrieval-augmented generation (RAG) system for high accuracy.
+                An advanced AI chatbot leveraging LangChain & Pinecone for precise medical insights. Features an
+                intelligent retrieval-augmented generation (RAG) system for high accuracy.
               </p>
               <div class="mt-auto flex gap-4">
-                <a href="https://github.com/vikingmanas/MedGen" target="_blank" class="inline-flex items-center text-sm font-medium text-white hover:text-apple-accent transition-colors gap-2">
+                <a href="https://github.com/vikingmanas/MedGen" target="_blank"
+                  class="inline-flex items-center text-sm font-medium text-white hover:text-apple-accent transition-colors gap-2">
                   <i class="devicon-github-original"></i> Repository
                 </a>
               </div>
@@ -309,19 +361,25 @@
           <!-- MentalHealthGen -->
           <article class="apple-card group flex flex-col h-full">
             <div class="card-image-wrapper h-64 bg-black overflow-hidden relative border-b border-white/10">
-              <img src="image/MentalHealth.png" alt="MentalHealthGen Preview" class="card-image w-full h-full object-cover object-top" />
+              <img src="image/MentalHealth.png" alt="MentalHealthGen Preview"
+                class="card-image w-full h-full object-cover object-top" />
             </div>
             <div class="p-8 flex flex-col flex-grow">
               <div class="flex flex-wrap items-center gap-2 mb-3">
-                <span class="px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase bg-[#61DAFB]/20 text-[#61DAFB] rounded-full">React</span>
-                <span class="px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase bg-white/10 text-white rounded-full">Node.js</span>
+                <span
+                  class="px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase bg-[#61DAFB]/20 text-[#61DAFB] rounded-full">React</span>
+                <span
+                  class="px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase bg-white/10 text-white rounded-full">Node.js</span>
               </div>
-              <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-apple-accent transition-colors">MentalHealthGen</h3>
+              <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-apple-accent transition-colors">
+                MentalHealthGen</h3>
               <p class="text-apple-subtitle text-sm mb-6 flex-grow font-light leading-relaxed">
-                Empathetic AI assistant promoting mental wellness. Engineered with a scalable backend architecture and a reassuring, minimal user interface designed for accessibility.
+                Empathetic AI assistant promoting mental wellness. Engineered with a scalable backend architecture and a
+                reassuring, minimal user interface designed for accessibility.
               </p>
               <div class="mt-auto flex gap-4">
-                <a href="https://github.com/vikingmanas/MentalHealthGen" target="_blank" class="inline-flex items-center text-sm font-medium text-white hover:text-apple-accent transition-colors gap-2">
+                <a href="https://github.com/vikingmanas/MentalHealthGen" target="_blank"
+                  class="inline-flex items-center text-sm font-medium text-white hover:text-apple-accent transition-colors gap-2">
                   <i class="devicon-github-original"></i> Repository
                 </a>
               </div>
@@ -331,19 +389,26 @@
           <!-- Bridge_2.0 -->
           <article class="apple-card group flex flex-col h-full">
             <div class="card-image-wrapper h-64 bg-black overflow-hidden relative border-b border-white/10">
-              <img src="image/TwoWay.png" alt="Bridge_2.0 Preview" class="card-image w-full h-full object-cover object-top" />
+              <img src="image/TwoWay.png" alt="Bridge_2.0 Preview"
+                class="card-image w-full h-full object-cover object-top" />
             </div>
             <div class="p-8 flex flex-col flex-grow">
               <div class="flex flex-wrap items-center gap-2 mb-3">
-                <span class="px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase bg-white/10 text-white rounded-full">Computer Vision</span>
-                <span class="px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase bg-[#F0DB4F]/20 text-[#F0DB4F] rounded-full">JS</span>
+                <span
+                  class="px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase bg-white/10 text-white rounded-full">Computer
+                  Vision</span>
+                <span
+                  class="px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase bg-[#F0DB4F]/20 text-[#F0DB4F] rounded-full">JS</span>
               </div>
-              <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-apple-accent transition-colors">Bridge_2.0</h3>
+              <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-apple-accent transition-colors">Bridge_2.0
+              </h3>
               <p class="text-apple-subtitle text-sm mb-6 flex-grow font-light leading-relaxed">
-                Real-time two-way sign language communication system integrating AI translation models directly into the browser.
+                Real-time two-way sign language communication system integrating AI translation models directly into the
+                browser.
               </p>
               <div class="mt-auto flex gap-4">
-                <a href="https://github.com/vikingmanas/Bridge_2.0" target="_blank" class="inline-flex items-center text-sm font-medium text-white hover:text-apple-accent transition-colors gap-2">
+                <a href="https://github.com/vikingmanas/Bridge_2.0" target="_blank"
+                  class="inline-flex items-center text-sm font-medium text-white hover:text-apple-accent transition-colors gap-2">
                   <i class="devicon-github-original"></i> Repository
                 </a>
               </div>
@@ -357,49 +422,56 @@
     <!-- EXPERIENCE SECTION -->
     <section id="experience" class="py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 animate-fadeInUp">
+        <div class="text-center mb-16 reveal-on-scroll">
           <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Professional Experience</h2>
           <div class="w-12 h-1 bg-apple-accent mx-auto rounded-full mb-4"></div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fadeInUp delay-100">
-          
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-on-scroll delay-100">
+
           <div class="apple-card p-6 flex flex-col">
-            <div class="h-16 w-16 mb-6 rounded-2xl bg-white flex items-center justify-center p-2 shadow-inner overflow-hidden">
-               <img src="image/Walmart.png" alt="Walmart Logo" class="h-full object-contain" />
+            <div
+              class="h-16 w-16 mb-6 rounded-2xl bg-white flex items-center justify-center p-2 shadow-inner overflow-hidden">
+              <img src="image/Walmart.png" alt="Walmart Logo" class="h-full object-contain" />
             </div>
             <h3 class="text-xl font-semibold mb-2 text-white">Walmart Tech</h3>
-            <span class="text-xs uppercase tracking-wider text-apple-accent font-semibold mb-3">Virtual Experience</span>
+            <span class="text-xs uppercase tracking-wider text-apple-accent font-semibold mb-3">Virtual
+              Experience</span>
             <p class="text-apple-subtitle text-sm font-light leading-relaxed flex-grow">
               Explored distributed systems and scalable backend architecture through Walmart's engineering workflows.
             </p>
           </div>
 
           <div class="apple-card p-6 flex flex-col">
-            <div class="h-16 w-16 mb-6 rounded-2xl bg-white flex items-center justify-center p-2 shadow-inner overflow-hidden">
-               <img src="image/GSSOC.png" alt="GSSoC Logo" class="h-full object-contain" />
+            <div
+              class="h-16 w-16 mb-6 rounded-2xl bg-white flex items-center justify-center p-2 shadow-inner overflow-hidden">
+              <img src="image/GSSOC.png" alt="GSSoC Logo" class="h-full object-contain" />
             </div>
             <h3 class="text-xl font-semibold mb-2 text-white">GSSoC '24</h3>
-            <span class="text-xs uppercase tracking-wider text-apple-accent font-semibold mb-3">Extended Contributor</span>
+            <span class="text-xs uppercase tracking-wider text-apple-accent font-semibold mb-3">Extended
+              Contributor</span>
             <p class="text-apple-subtitle text-sm font-light leading-relaxed flex-grow">
               Ranked Top 433/50k. Merged robust PRs into scalable open-source repositories and accumulated 1000+ points.
             </p>
           </div>
 
           <div class="apple-card p-6 flex flex-col">
-            <div class="h-16 w-16 mb-6 rounded-2xl bg-white flex items-center justify-center p-2 shadow-inner overflow-hidden">
-               <img src="image/SIH.jpg" alt="SIH Logo" class="w-full h-full object-cover" />
+            <div
+              class="h-16 w-16 mb-6 rounded-2xl bg-white flex items-center justify-center p-2 shadow-inner overflow-hidden">
+              <img src="image/SIH.jpg" alt="SIH Logo" class="w-full h-full object-cover" />
             </div>
             <h3 class="text-xl font-semibold mb-2 text-white">SIH 2024</h3>
-            <span class="text-xs uppercase tracking-wider text-apple-accent font-semibold mb-3">Top 50 Pre-Qualifier</span>
+            <span class="text-xs uppercase tracking-wider text-apple-accent font-semibold mb-3">Top 50
+              Pre-Qualifier</span>
             <p class="text-apple-subtitle text-sm font-light leading-relaxed flex-grow">
               Engineered "LawBot" during rapid prototyping cycles, solving high-pressure systemic challenges.
             </p>
           </div>
 
           <div class="apple-card p-6 flex flex-col">
-            <div class="h-16 w-16 mb-6 rounded-2xl bg-white flex items-center justify-center p-2 shadow-inner overflow-hidden">
-               <img src="image/internship.jpg" alt="AICTE Logo" class="w-full h-full object-cover" />
+            <div
+              class="h-16 w-16 mb-6 rounded-2xl bg-white flex items-center justify-center p-2 shadow-inner overflow-hidden">
+              <img src="image/internship.jpg" alt="AICTE Logo" class="w-full h-full object-cover" />
             </div>
             <h3 class="text-xl font-semibold mb-2 text-white">AI/ML Internship</h3>
             <span class="text-xs uppercase tracking-wider text-apple-accent font-semibold mb-3">AICTE × Google</span>
@@ -423,10 +495,12 @@
         © 2024 Manas Dubey. All rights reserved. Designed with precision.
       </p>
       <div class="flex space-x-6">
-        <a href="https://www.linkedin.com/in/manas-dubey-415385296" target="_blank" class="text-apple-subtitle hover:text-white transition-colors">
+        <a href="https://www.linkedin.com/in/manas-dubey-415385296" target="_blank"
+          class="text-apple-subtitle hover:text-white transition-colors">
           <i class="devicon-linkedin-plain text-xl"></i>
         </a>
-        <a href="https://github.com/vikingmanas" target="_blank" class="text-apple-subtitle hover:text-white transition-colors">
+        <a href="https://github.com/vikingmanas" target="_blank"
+          class="text-apple-subtitle hover:text-white transition-colors">
           <i class="devicon-github-original text-xl"></i>
         </a>
       </div>
@@ -434,11 +508,14 @@
   </footer>
 
   <!-- CONTACT MODAL -->
-  <div id="contact-modal" class="fixed inset-0 modal-overlay flex items-center justify-center hidden z-[100] p-4 transition-opacity">
-    <div class="bg-apple-card p-8 rounded-[2rem] shadow-2xl max-w-lg w-full border border-white/10 transform transition-all">
+  <div id="contact-modal"
+    class="fixed inset-0 modal-overlay flex items-center justify-center hidden z-[100] p-4 transition-opacity">
+    <div
+      class="bg-apple-card p-8 rounded-[2rem] shadow-2xl max-w-lg w-full border border-white/10 transform transition-all">
       <div class="flex justify-between items-center mb-6">
         <h3 class="text-3xl font-bold tracking-tight text-white">Let's Talk</h3>
-        <button id="close-modal-button" class="text-apple-subtitle hover:text-white text-3xl font-light transition-colors">&times;</button>
+        <button id="close-modal-button"
+          class="text-apple-subtitle hover:text-white text-3xl font-light transition-colors">&times;</button>
       </div>
 
       <p class="text-sm text-apple-subtitle mb-6 font-light">
@@ -447,23 +524,33 @@
 
       <form id="contact-form" class="space-y-5">
         <div>
-          <label class="block text-xs font-semibold text-apple-subtitle uppercase tracking-widest mb-1.5" for="contact-name">Name</label>
-          <input type="text" id="contact-name" class="w-full bg-black/50 border border-white/10 focus:border-apple-accent focus:ring-1 focus:ring-apple-accent px-4 py-3 rounded-xl text-white outline-none transition-all placeholder-white/20" placeholder="Tim Cook" required />
+          <label class="block text-xs font-semibold text-apple-subtitle uppercase tracking-widest mb-1.5"
+            for="contact-name">Name</label>
+          <input type="text" id="contact-name"
+            class="w-full bg-black/50 border border-white/10 focus:border-apple-accent focus:ring-1 focus:ring-apple-accent px-4 py-3 rounded-xl text-white outline-none transition-all placeholder-white/20"
+            placeholder="Tim Cook" required />
         </div>
 
         <div>
-           <label class="block text-xs font-semibold text-apple-subtitle uppercase tracking-widest mb-1.5" for="contact-email">Email</label>
-          <input type="email" id="contact-email" class="w-full bg-black/50 border border-white/10 focus:border-apple-accent focus:ring-1 focus:ring-apple-accent px-4 py-3 rounded-xl text-white outline-none transition-all placeholder-white/20" placeholder="tim@apple.com" required />
+          <label class="block text-xs font-semibold text-apple-subtitle uppercase tracking-widest mb-1.5"
+            for="contact-email">Email</label>
+          <input type="email" id="contact-email"
+            class="w-full bg-black/50 border border-white/10 focus:border-apple-accent focus:ring-1 focus:ring-apple-accent px-4 py-3 rounded-xl text-white outline-none transition-all placeholder-white/20"
+            placeholder="tim@apple.com" required />
         </div>
 
         <div>
-           <label class="block text-xs font-semibold text-apple-subtitle uppercase tracking-widest mb-1.5" for="contact-message">Message</label>
-          <textarea id="contact-message" rows="4" class="w-full bg-black/50 border border-white/10 focus:border-apple-accent focus:ring-1 focus:ring-apple-accent px-4 py-3 rounded-xl text-white outline-none transition-all placeholder-white/20 resize-none" placeholder="Hey Manas, we'd love to chat..." required></textarea>
+          <label class="block text-xs font-semibold text-apple-subtitle uppercase tracking-widest mb-1.5"
+            for="contact-message">Message</label>
+          <textarea id="contact-message" rows="4"
+            class="w-full bg-black/50 border border-white/10 focus:border-apple-accent focus:ring-1 focus:ring-apple-accent px-4 py-3 rounded-xl text-white outline-none transition-all placeholder-white/20 resize-none"
+            placeholder="Hey Manas, we'd love to chat..." required></textarea>
         </div>
 
         <div class="flex flex-col sm:flex-row gap-3 pt-4">
           <button type="submit" class="btn-primary flex-1 justify-center py-3 text-base">Send Message</button>
-          <button id="copy-email" type="button" class="btn-secondary flex-1 justify-center py-3 text-base">Copy Email</button>
+          <button id="copy-email" type="button" class="btn-secondary flex-1 justify-center py-3 text-base">Copy
+            Email</button>
         </div>
 
         <p id="contact-status" class="text-apple-subtitle text-sm text-center font-medium hidden mt-4"></p>
@@ -472,20 +559,37 @@
   </div>
 
   <!-- RESUME MODAL -->
-  <div id="resume-modal" class="fixed inset-0 modal-overlay flex items-center justify-center hidden z-[100] p-4 sm:p-6 lg:p-10">
-    <div class="bg-[#1c1c1e] w-full max-w-5xl h-[90vh] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl flex flex-col">
+  <div id="resume-modal"
+    class="fixed inset-0 modal-overlay flex items-center justify-center hidden z-[100] p-4 sm:p-6 lg:p-10">
+    <div
+      class="bg-[#1c1c1e] w-full max-w-5xl h-[90vh] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl flex flex-col">
       <div class="flex items-center justify-between p-4 px-6 bg-black/50 backdrop-blur-md border-b border-white/10">
         <h3 class="text-lg font-semibold text-white tracking-wide">Resume</h3>
         <div class="flex items-center gap-4">
           <a href="Resume.pdf" download class="btn-primary text-xs px-4 py-1.5">Download PDF</a>
-          <button id="close-resume" class="text-apple-subtitle hover:text-white text-3xl font-light transition-colors leading-none">&times;</button>
+          <button id="close-resume"
+            class="text-apple-subtitle hover:text-white text-3xl font-light transition-colors leading-none">&times;</button>
         </div>
       </div>
       <div class="flex-grow bg-[#323639]">
-         <iframe src="Resume.pdf" class="w-full h-full border-0"></iframe>
+        <iframe src="Resume.pdf" class="w-full h-full border-0"></iframe>
       </div>
     </div>
   </div>
+
+  <!-- INTERACTIVE MOUSE GLOW -->
+  <div id="mouse-glow"
+    class="fixed pointer-events-none w-96 h-96 bg-apple-accent/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 z-0 hidden lg:block"
+    style="left: -100px; top: -100px;"></div>
+
+  <!-- BACK TO TOP -->
+  <button id="back-to-top"
+    class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-white/10 backdrop-blur border border-white/20 text-white flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-apple-accent hover:text-white z-40 transform translate-y-4 shadow-lg">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
 
   <script src="index.js" defer></script>
 </body>

@@ -26,10 +26,45 @@ document.addEventListener('DOMContentLoaded', () => {
   const backToTop = document.getElementById('back-to-top');
   if (backToTop) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) backToTop.classList.remove('hidden');
-      else backToTop.classList.add('hidden');
+      if (window.scrollY > 400) {
+        backToTop.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+      } else {
+        backToTop.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+      }
     });
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+
+  // --- Scroll Animations (Intersection Observer) ---
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+  const scrollObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fadeInUp');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+    el.classList.add('opacity-0'); // ensure it is hidden before scroll
+    scrollObserver.observe(el);
+  });
+
+  // --- Interactive Mouse Glow ---
+  const mouseGlow = document.getElementById('mouse-glow');
+  if (mouseGlow) {
+    document.addEventListener('mousemove', (e) => {
+      // Use requestAnimationFrame for smooth performance
+      requestAnimationFrame(() => {
+        mouseGlow.style.left = `${e.clientX}px`;
+        mouseGlow.style.top = `${e.clientY}px`;
+      });
+    });
   }
 
   const contactBtn = document.getElementById('contact-button');
