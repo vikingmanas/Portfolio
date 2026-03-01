@@ -55,14 +55,79 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollObserver.observe(el);
   });
 
-  // --- Interactive Mouse Glow ---
   const mouseGlow = document.getElementById('mouse-glow');
-  if (mouseGlow) {
+  const cursor = document.getElementById('magnetic-cursor');
+  const follower = document.getElementById('magnetic-cursor-follower');
+
+  // Track continuous position for the follower
+  let mouseX = 0, mouseY = 0;
+  let followerX = 0, followerY = 0;
+
+  if (cursor && follower) {
+    // Only apply custom cursor on non-touch devices
+    if (window.matchMedia("(pointer: fine)").matches) {
+      document.body.classList.add('cursor-none');
+      cursor.classList.remove('hidden');
+      follower.classList.remove('hidden');
+
+      // Add robust hover states
+      const addHoverToCursor = () => {
+        cursor.classList.add('cursor-hover');
+        follower.classList.add('cursor-hover');
+      };
+
+      const removeHoverFromCursor = () => {
+        cursor.classList.remove('cursor-hover');
+        follower.classList.remove('cursor-hover');
+      };
+
+      // Apply to all interactive elements statically present
+      const interactiveElements = document.querySelectorAll('a, button, input, textarea, [role="button"]');
+      interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', addHoverToCursor);
+        el.addEventListener('mouseleave', removeHoverFromCursor);
+      });
+
+      // Also use event delegation for dynamically added or deeply nested elements
+      document.addEventListener('mouseover', (e) => {
+        if (e.target.closest('a, button, input, textarea, [role="button"]')) {
+          addHoverToCursor();
+        }
+      });
+      document.addEventListener('mouseout', (e) => {
+        if (e.target.closest('a, button, input, textarea, [role="button"]')) {
+          removeHoverFromCursor();
+        }
+      });
+
+      // Simple animation loop for the delayed follower
+      const renderFollower = () => {
+        // Easing interpolation
+        followerX += (mouseX - followerX) * 0.15;
+        followerY += (mouseY - followerY) * 0.15;
+
+        follower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) translate(-50%, -50%)`;
+        requestAnimationFrame(renderFollower);
+      };
+      requestAnimationFrame(renderFollower);
+    }
+  }
+
+  if (mouseGlow || (cursor && follower)) {
     document.addEventListener('mousemove', (e) => {
       // Use requestAnimationFrame for smooth performance
       requestAnimationFrame(() => {
-        mouseGlow.style.left = `${e.clientX}px`;
-        mouseGlow.style.top = `${e.clientY}px`;
+        if (mouseGlow) {
+          mouseGlow.style.left = `${e.clientX}px`;
+          mouseGlow.style.top = `${e.clientY}px`;
+        }
+
+        if (cursor && follower) {
+          // Direct transform for the main dot to eliminate lag
+          cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        }
       });
     });
   }

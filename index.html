@@ -6,6 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manas Dubey | Independent Developer</title>
 
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Manas Dubey | Independent Developer" />
+  <meta property="og:description"
+    content="Crafting elegant, industry-standard digital experiences. Passionate about building robust backend systems, sleek mobile apps, and scalable web platforms." />
+  <meta property="og:image" content="image/ME.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="Manas Dubey | Independent Developer" />
+  <meta property="twitter:description"
+    content="Crafting elegant, industry-standard digital experiences. Passionate about building robust backend systems, sleek mobile apps, and scalable web platforms." />
+  <meta property="twitter:image" content="image/ME.jpg" />
   <!-- Google Fonts: Inter as fallback -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,6 +56,13 @@
 
 <body class="bg-apple-bg text-apple-text font-sans antialiased">
 
+  <!-- Custom Magnetic Cursor -->
+  <div id="magnetic-cursor"
+    class="hidden md:block fixed pointer-events-none z-[9999] w-4 h-4 rounded-full bg-apple-accent mix-blend-difference transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-150 ease-out">
+  </div>
+  <div id="magnetic-cursor-follower"
+    class="hidden md:block fixed pointer-events-none z-[9998] w-10 h-10 rounded-full border border-apple-accent/50 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 ease-out">
+  </div>
   <!-- Navbar -->
   <header class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -122,7 +142,7 @@
               class="absolute inset-0 bg-apple-accent/20 rounded-full blur-xl group-hover:bg-apple-accent/40 transition-colors">
             </div>
             <img src="image/ME.jpg" onerror="this.onerror=null;this.src='image/image2.jpg';" alt="Manas Dubey"
-              class="w-full h-full rounded-full object-cover shadow-2xl relative z-10" />
+              class="w-full h-full rounded-full object-cover shadow-2xl relative z-10" loading="lazy" />
           </div>
 
           <p
@@ -186,7 +206,8 @@
           <div class="flex flex-col md:flex-row gap-10 items-center">
             <div class="w-full md:w-1/3 flex justify-center">
               <img src="image/image2.jpg" alt="Profile"
-                class="rounded-2xl w-full max-w-sm object-cover aspect-[4/5] shadow-2xl border border-white/10" />
+                class="rounded-2xl w-full max-w-sm object-cover aspect-[4/5] shadow-2xl border border-white/10"
+                loading="lazy" />
             </div>
 
             <div class="flex-1">
@@ -299,10 +320,11 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 reveal-on-scroll delay-100">
 
           <!-- MoleVerse (iOS) -->
-          <article class="apple-card group flex flex-col h-full">
+          <article class="apple-card group flex flex-col h-full" data-tilt data-tilt-max="5" data-tilt-speed="400"
+            data-tilt-glare="true" data-tilt-max-glare="0.2">
             <div class="card-image-wrapper h-64 bg-black overflow-hidden relative border-b border-white/10">
               <img src="image/MoleVerse.jpeg" alt="MoleVerse App Preview"
-                class="card-image w-full h-full object-cover object-center" />
+                class="card-image w-full h-full object-cover object-center" loading="lazy" />
             </div>
             <div class="p-8 flex flex-col flex-grow">
               <div class="flex items-center gap-2 mb-3">
@@ -328,10 +350,11 @@
           </article>
 
           <!-- MedGen -->
-          <article class="apple-card group flex flex-col h-full">
+          <article class="apple-card group flex flex-col h-full" data-tilt data-tilt-max="5" data-tilt-speed="400"
+            data-tilt-glare="true" data-tilt-max-glare="0.2">
             <div class="card-image-wrapper h-64 bg-black overflow-hidden relative border-b border-white/10">
-              <img src="image/MED.png" alt="MedGen Preview"
-                class="card-image w-full h-full object-cover object-center" />
+              <img src="image/MED.png" alt="MedGen Preview" class="card-image w-full h-full object-cover object-center"
+                loading="lazy" />
             </div>
             <div class="p-8 flex flex-col flex-grow">
               <div class="flex flex-wrap items-center gap-2 mb-3">
@@ -355,10 +378,11 @@
           </article>
 
           <!-- MentalHealthGen -->
-          <article class="apple-card group flex flex-col h-full">
+          <article class="apple-card group flex flex-col h-full" data-tilt data-tilt-max="5" data-tilt-speed="400"
+            data-tilt-glare="true" data-tilt-max-glare="0.2">
             <div class="card-image-wrapper h-64 bg-black overflow-hidden relative border-b border-white/10">
               <img src="image/MentalHealth.png" alt="MentalHealthGen Preview"
-                class="card-image w-full h-full object-cover object-top" />
+                class="card-image w-full h-full object-cover object-top" loading="lazy" />
             </div>
             <div class="p-8 flex flex-col flex-grow">
               <div class="flex flex-wrap items-center gap-2 mb-3">
@@ -383,10 +407,11 @@
           </article>
 
           <!-- Bridge_2.0 -->
-          <article class="apple-card group flex flex-col h-full">
+          <article class="apple-card group flex flex-col h-full" data-tilt data-tilt-max="5" data-tilt-speed="400"
+            data-tilt-glare="true" data-tilt-max-glare="0.2">
             <div class="card-image-wrapper h-64 bg-black overflow-hidden relative border-b border-white/10">
               <img src="image/TwoWay.png" alt="Bridge_2.0 Preview"
-                class="card-image w-full h-full object-cover object-top" />
+                class="card-image w-full h-full object-cover object-top" loading="lazy" />
             </div>
             <div class="p-8 flex flex-col flex-grow">
               <div class="flex flex-wrap items-center gap-2 mb-3">
@@ -425,10 +450,11 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-on-scroll delay-100">
 
-          <div class="apple-card p-6 flex flex-col">
+          <div class="apple-card p-6 flex flex-col" data-tilt data-tilt-max="5" data-tilt-speed="400"
+            data-tilt-glare="true" data-tilt-max-glare="0.2">
             <div
               class="h-16 w-16 mb-6 rounded-2xl bg-white flex items-center justify-center p-2 shadow-inner overflow-hidden">
-              <img src="image/Walmart.png" alt="Walmart Logo" class="h-full object-contain" />
+              <img src="image/Walmart.png" alt="Walmart Logo" class="h-full object-contain" loading="lazy" />
             </div>
             <h3 class="text-xl font-semibold mb-2 text-white">Walmart Tech</h3>
             <span class="text-xs uppercase tracking-wider text-apple-accent font-semibold mb-3">Virtual
@@ -438,10 +464,11 @@
             </p>
           </div>
 
-          <div class="apple-card p-6 flex flex-col">
+          <div class="apple-card p-6 flex flex-col" data-tilt data-tilt-max="5" data-tilt-speed="400"
+            data-tilt-glare="true" data-tilt-max-glare="0.2">
             <div
               class="h-16 w-16 mb-6 rounded-2xl bg-white flex items-center justify-center p-2 shadow-inner overflow-hidden">
-              <img src="image/GSSOC.png" alt="GSSoC Logo" class="h-full object-contain" />
+              <img src="image/GSSOC.png" alt="GSSoC Logo" class="h-full object-contain" loading="lazy" />
             </div>
             <h3 class="text-xl font-semibold mb-2 text-white">GSSoC '24</h3>
             <span class="text-xs uppercase tracking-wider text-apple-accent font-semibold mb-3">Extended
@@ -451,10 +478,11 @@
             </p>
           </div>
 
-          <div class="apple-card p-6 flex flex-col">
+          <div class="apple-card p-6 flex flex-col" data-tilt data-tilt-max="5" data-tilt-speed="400"
+            data-tilt-glare="true" data-tilt-max-glare="0.2">
             <div
               class="h-16 w-16 mb-6 rounded-2xl bg-white flex items-center justify-center p-2 shadow-inner overflow-hidden">
-              <img src="image/SIH.jpg" alt="SIH Logo" class="w-full h-full object-cover" />
+              <img src="image/SIH.jpg" alt="SIH Logo" class="w-full h-full object-cover" loading="lazy" />
             </div>
             <h3 class="text-xl font-semibold mb-2 text-white">SIH 2024</h3>
             <span class="text-xs uppercase tracking-wider text-apple-accent font-semibold mb-3">Top 50
@@ -464,10 +492,11 @@
             </p>
           </div>
 
-          <div class="apple-card p-6 flex flex-col">
+          <div class="apple-card p-6 flex flex-col" data-tilt data-tilt-max="5" data-tilt-speed="400"
+            data-tilt-glare="true" data-tilt-max-glare="0.2">
             <div
               class="h-16 w-16 mb-6 rounded-2xl bg-white flex items-center justify-center p-2 shadow-inner overflow-hidden">
-              <img src="image/internship.jpg" alt="AICTE Logo" class="w-full h-full object-cover" />
+              <img src="image/internship.jpg" alt="AICTE Logo" class="w-full h-full object-cover" loading="lazy" />
             </div>
             <h3 class="text-xl font-semibold mb-2 text-white">AI/ML Internship</h3>
             <span class="text-xs uppercase tracking-wider text-apple-accent font-semibold mb-3">AICTE × Google</span>
@@ -587,6 +616,7 @@
     </svg>
   </button>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
   <script src="index.js" defer></script>
 </body>
 
