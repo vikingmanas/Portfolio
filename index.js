@@ -56,78 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const mouseGlow = document.getElementById('mouse-glow');
-  const cursor = document.getElementById('magnetic-cursor');
-  const follower = document.getElementById('magnetic-cursor-follower');
 
-  // Track continuous position for the follower
-  let mouseX = 0, mouseY = 0;
-  let followerX = 0, followerY = 0;
-
-  if (cursor && follower) {
-    // Only apply custom cursor on non-touch devices
-    if (window.matchMedia("(pointer: fine)").matches) {
-      document.body.classList.add('cursor-none');
-      cursor.classList.remove('hidden');
-      follower.classList.remove('hidden');
-
-      // Add robust hover states
-      const addHoverToCursor = () => {
-        cursor.classList.add('cursor-hover');
-        follower.classList.add('cursor-hover');
-      };
-
-      const removeHoverFromCursor = () => {
-        cursor.classList.remove('cursor-hover');
-        follower.classList.remove('cursor-hover');
-      };
-
-      // Apply to all interactive elements statically present
-      const interactiveElements = document.querySelectorAll('a, button, input, textarea, [role="button"]');
-      interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', addHoverToCursor);
-        el.addEventListener('mouseleave', removeHoverFromCursor);
-      });
-
-      // Also use event delegation for dynamically added or deeply nested elements
-      document.addEventListener('mouseover', (e) => {
-        if (e.target.closest('a, button, input, textarea, [role="button"]')) {
-          addHoverToCursor();
-        }
-      });
-      document.addEventListener('mouseout', (e) => {
-        if (e.target.closest('a, button, input, textarea, [role="button"]')) {
-          removeHoverFromCursor();
-        }
-      });
-
-      // Simple animation loop for the delayed follower
-      const renderFollower = () => {
-        // Easing interpolation
-        followerX += (mouseX - followerX) * 0.15;
-        followerY += (mouseY - followerY) * 0.15;
-
-        follower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) translate(-50%, -50%)`;
-        requestAnimationFrame(renderFollower);
-      };
-      requestAnimationFrame(renderFollower);
-    }
-  }
-
-  if (mouseGlow || (cursor && follower)) {
+  if (mouseGlow) {
     document.addEventListener('mousemove', (e) => {
       // Use requestAnimationFrame for smooth performance
       requestAnimationFrame(() => {
-        if (mouseGlow) {
-          mouseGlow.style.left = `${e.clientX}px`;
-          mouseGlow.style.top = `${e.clientY}px`;
-        }
-
-        if (cursor && follower) {
-          // Direct transform for the main dot to eliminate lag
-          cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-        }
+        mouseGlow.style.left = `${e.clientX}px`;
+        mouseGlow.style.top = `${e.clientY}px`;
       });
     });
   }
@@ -201,19 +136,20 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         await navigator.clipboard.writeText('manasdubey2709@gmail.com');
         copyEmailBtn.textContent = 'Copied!';
-        setTimeout(() => (copyEmailBtn.textContent = 'Copy email'), 1500);
+        setTimeout(() => (copyEmailBtn.textContent = 'Copy Email'), 1500);
       } catch (err) {
-        mailtoLink?.click();
+        window.location.href = 'mailto:manasdubey2709@gmail.com';
       }
     });
   }
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const name = document.getElementById('contact-name')?.value.trim() || '';
       const email = document.getElementById('contact-email')?.value.trim() || '';
       const message = document.getElementById('contact-message')?.value.trim() || '';
+
       if (!name || !email || !message) {
         if (contactStatus) {
           contactStatus.textContent = 'Please complete all fields.';
@@ -231,18 +167,57 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return;
       }
-      const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-      window.location.href = `mailto:manasdubey2709@gmail.com?subject=${subject}&body=${body}`;
+
       if (contactStatus) {
-        contactStatus.textContent = 'Opening email client...';
+        contactStatus.textContent = 'Sending message...';
         contactStatus.classList.remove('hidden');
-        setTimeout(() => {
-          contactStatus.classList.add('hidden');
-          closeContact();
-        }, 1200);
-      } else {
-        closeContact();
+      }
+
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/manasdubey2709@gmail.com", {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            message: message,
+            _subject: `Portfolio contact from ${name}`,
+            _template: "table"
+          })
+        });
+
+        if (response.ok) {
+          if (contactStatus) {
+            contactStatus.textContent = 'Message sent successfully!';
+            contactForm.reset();
+            setTimeout(() => {
+              contactStatus.classList.add('hidden');
+              closeContact();
+            }, 2000);
+          } else {
+            contactForm.reset();
+            closeContact();
+          }
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        console.error(error);
+        const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+        window.location.href = `mailto:manasdubey2709@gmail.com?subject=${subject}&body=${body}`;
+
+        if (contactStatus) {
+          contactStatus.textContent = 'Opening email client as fallback...';
+          setTimeout(() => {
+            contactStatus.classList.add('hidden');
+            contactForm.reset();
+            closeContact();
+          }, 2000);
+        }
       }
     });
   }
