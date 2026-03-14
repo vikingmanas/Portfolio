@@ -226,6 +226,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const resumeModal = document.getElementById('resume-modal');
   const closeResume = document.getElementById('close-resume');
 
+  function escResumeHandler(e) {
+    if (e.key === 'Escape') closeResumeModal();
+  }
+
   function openResumeModal() {
     if (!resumeModal) return;
     lastFocusedBeforeModal = document.activeElement;
@@ -235,9 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const frame = resumeModal.querySelector('iframe');
       if (frame) frame.focus();
     }, 50);
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeResumeModal();
-    });
+    document.addEventListener('keydown', escResumeHandler);
   }
 
   function closeResumeModal() {
@@ -245,6 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resumeModal.classList.add('hidden');
     document.body.style.overflow = '';
     try { lastFocusedBeforeModal?.focus(); } catch (e) { }
+    document.removeEventListener('keydown', escResumeHandler);
   }
 
   if (resumeButton) resumeButton.addEventListener('click', openResumeModal);
